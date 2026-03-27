@@ -446,7 +446,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#" class="active" aria-current="page">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#" class="active" aria-current="page">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <!-- HERO -->
@@ -470,7 +470,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- BRAND STATEMENT -->
 <div class="sec-pad g-2col g-wide align-c">
   <div>
-    <span class="kicker">— Our Identity</span>
+    <span class="kicker" data-jp="— アイデンティティ">— Our Identity</span>
     <h2 class="section-title" data-jp="三つの部屋。<em>ひとつの住所。<br>日本最古の花街。</em>" style="font-size:clamp(32px,3.5vw,46px);margin-bottom:28px;">Three rooms. <em>One address.<br>Japan's oldest quarter.</em></h2>
     <p class="section-body" data-jp="綾錦は1640年に指定された通り——日本最古の公式花街の一画に建つ。客室はわずか三室。信楽焼の浴槽、竹のテラス、徒歩一分の中央市場の音で始まる朝。大型犬を含むペット歓迎。" style="margin-bottom:32px;">Ayanishiki sits on a street designated in 1640 — Japan's oldest officially licensed quarter. Three rooms only. A Shigaraki ceramic bath, a bamboo terrace, a morning that begins with the sound of the central market one minute away. Dogs welcome, including large ones.</p>
     <button type="button" class="btn btn-outline" style="font-size:9px;">Our Concept →</button>
@@ -527,16 +527,16 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <button type="button" class="btn btn-outline" style="font-size:9px;">View All →</button>
   </div>
   <div class="g-3col g-gap-card">
-    <div class="news-card"><img src="images/article-tayu.jpg" alt="The last tayū house" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">The last tayū house and the women who kept its form</div><div class="news-card-date">March 2025 · 6 min read</div></div></div>
-    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
-    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki market morning" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
+    <div class="news-card"><img src="images/article-tayu.jpg" alt="The last tayū house" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title" data-jp="最後の太夫屋敷と、その型を守り続けた女性たち">The last tayū house and the women who kept its form</div><div class="news-card-date">March 2025 · 6 min read</div></div></div>
+    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title" data-jp="綾織：十二枚綜絖の機が語る平安の幾何学">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki market morning" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title" data-jp="錦の朝：市場が混む前に食べるべきもの">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 58-5 — Shimabara, Shimogyo-ku, Kyoto 600-8816.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a><a href="#">Rates</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Shimabara</a><a href="#">Journal</a><a href="#">Access</a><a href="#">FAQ</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a><a href="#">Enquiries</a><a href="#">Press</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a><a href="#" data-jp="料金">Rates</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#">Shimabara</a><a href="#" data-jp="ジャーナル">Journal</a><a href="#" data-jp="アクセス">Access</a><a href="#" data-jp="よくある質問">FAQ</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a><a href="#" data-jp="お問い合わせ">Enquiries</a><a href="#" data-jp="プレス">Press</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦. Kyoto Shimabara. All rights reserved.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a><a class="ft-soc" href="#" aria-label="X (Twitter)">X</a></div></div>
 </footer>
 </div>
@@ -548,7 +548,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" class="active" aria-current="page">About</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" class="active" aria-current="page">About</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="height:480px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:url('images/hero-about.jpg') center/cover no-repeat;">
@@ -569,20 +569,20 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- CONCEPT TEXT -->
 <div class="sec-pad g-2col g-wide">
   <div>
-    <span class="kicker">— Origin</span>
-    <h2 class="section-title">Named for <em>the weave.</em></h2>
+    <span class="kicker" data-jp="— 起源">— Origin</span>
+    <h2 class="section-title" data-jp="この名前は、<em>織物から。</em>">Named for <em>the weave.</em></h2>
     <p class="section-body" style="margin-bottom:24px;">Aya-ori — the diagonal interlocking weave of Heian court silk — names this building. The structure itself performs the same logic: each room offset from the next, each threshold a deliberate reorientation. You arrive, and the house has already begun its introduction.</p>
     <p class="section-body" style="margin-bottom:32px;">The building dates from the early Meiji period. It was a machiya on a street designated — and legally protected — since 1640. When restoration began, the decision was never what to modernise, but what to leave undisturbed.</p>
     <span class="aya-divider"></span>
     <p style="font-size:12px;letter-spacing:.04em;color:var(--sumi-light);font-weight:200;line-height:1.9;">Established 1640 · Restored 2023 · Shimabara, Kyoto</p>
   </div>
   <div>
-    <span class="kicker">— Values</span>
-    <h2 class="section-title">What <em>we believe.</em></h2>
+    <span class="kicker" data-jp="— 価値観">— Values</span>
+    <h2 class="section-title" data-jp="私たちが<em>大切にすること。</em>">What <em>we believe.</em></h2>
     <div style="display:flex;flex-direction:column;gap:32px;margin-top:12px;">
-      <div style="border-left:1px solid var(--border);padding-left:24px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">Precision over comfort</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">A room arranged with exactness offers more rest than one arranged for ease. We trust the classical proportions.</p></div>
-      <div style="border-left:1px solid var(--border);padding-left:24px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">The fact, not the adjective</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">"1640." "Ōmon-dōri." "Three rooms." These carry more weight than any description of luxury.</p></div>
-      <div style="border-left:1px solid var(--border);padding-left:24px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">The unhurried introduction</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">Every culture of formal hospitality is a culture of introductions. We take the long version. There is time.</p></div>
+      <div style="border-left:1px solid var(--border);padding-left:24px;"><div data-jp="快適さより精密さ" style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">Precision over comfort</div><p data-jp="精確に整えられた部屋は、使いやすさだけを考えた部屋より深い休息をもたらします。私たちは古典的な寸法を信じています。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">A room arranged with exactness offers more rest than one arranged for ease. We trust the classical proportions.</p></div>
+      <div style="border-left:1px solid var(--border);padding-left:24px;"><div data-jp="形容詞でなく、事実" style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">The fact, not the adjective</div><p data-jp="「1640年。」「大門通。」「三室。」これらはどんな贅沢の説明よりも重みを持ちます。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">"1640." "Ōmon-dōri." "Three rooms." These carry more weight than any description of luxury.</p></div>
+      <div style="border-left:1px solid var(--border);padding-left:24px;"><div data-jp="急がない出会い" style="font-family:var(--f-display);font-size:17px;font-weight:300;color:var(--sumi);margin-bottom:8px;">The unhurried introduction</div><p data-jp="正式なもてなしの文化はすべて、紹介の文化です。私たちは丁寧な版を選びます。時間はあります。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;">Every culture of formal hospitality is a culture of introductions. We take the long version. There is time.</p></div>
     </div>
   </div>
 </div>
@@ -597,7 +597,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <!-- HISTORY TIMELINE -->
 <div style="padding:96px 52px;border-bottom:1px solid var(--border);">
-  <span class="kicker">— History</span>
+  <span class="kicker" data-jp="— 歴史">— History</span>
   <h2 class="section-title" data-jp="この<em>住所</em>の歴史。" style="margin-bottom:56px;">The <em>address</em> in time.</h2>
   <div style="display:flex;flex-direction:column;">
     <div class="g-timeline">
@@ -619,9 +619,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Shimabara</a><a href="#">Journal</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a><a href="#">Enquiries</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#">Shimabara</a><a href="#" data-jp="ジャーナル">Journal</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a><a href="#" data-jp="お問い合わせ">Enquiries</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -633,7 +633,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#" class="active" aria-current="page">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" class="active" aria-current="page">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="height:360px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:url('images/hero-rooms.jpg') center/cover no-repeat;">
@@ -687,9 +687,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -701,7 +701,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#" class="active" aria-current="page">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#" class="active" aria-current="page">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <!-- BREADCRUMB -->
@@ -785,9 +785,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -799,7 +799,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <!-- HEADER -->
@@ -923,9 +923,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Shimabara</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a><a href="#">Enquiries</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#">Shimabara</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a><a href="#" data-jp="お問い合わせ">Enquiries</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -937,7 +937,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -950,18 +950,18 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <div style="position:absolute;top:36px;left:52px;"><span class="chip" style="background:rgba(242,238,231,.08);border:1px solid rgba(242,238,231,.15);color:rgba(242,238,231,.5);font-size:8px;letter-spacing:.18em;padding:5px 12px;">Culture · 文化</span></div>
   <div style="position:absolute;bottom:60px;left:52px;right:52px;">
     <h1 style="font-family:var(--f-display);font-size:clamp(36px,4.5vw,64px);font-weight:300;color:rgba(242,238,231,.9);line-height:1;margin-bottom:12px;">茶の湯</h1>
-    <h2 style="font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;color:rgba(242,238,231,.65);margin-bottom:20px;">Cha-no-yu · The Tea Ceremony</h2>
-    <p style="font-size:14px;color:rgba(242,238,231,.72);max-width:520px;line-height:1.9;font-weight:300;">Performed by a practitioner who has made this movement forty thousand times. You sit in the designated position. The rest is already arranged.</p>
+    <h2 data-jp="茶の湯 · お茶の世界" style="font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;color:rgba(242,238,231,.65);margin-bottom:20px;">Cha-no-yu · The Tea Ceremony</h2>
+    <p data-jp="この所作を四万回繰り返してきた茶人による。あなたは定められた位置に座る。残りはすでに整えられている。" style="font-size:14px;color:rgba(242,238,231,.72);max-width:520px;line-height:1.9;font-weight:300;">Performed by a practitioner who has made this movement forty thousand times. You sit in the designated position. The rest is already arranged.</p>
   </div>
 </div>
 <div class="sec-pad g-sidebar">
   <div>
     <span class="kicker">— About This Experience</span>
-    <h2 class="section-title" style="margin-bottom:28px;font-size:32px;">The form <em>that remains.</em></h2>
-    <p class="section-body" style="margin-bottom:24px;">The ceremony is conducted in the tea room on the ground floor — eight tatami mats, classical proportions — with a recessed hearth for autumn and winter, a portable brazier for spring and summer. The ceremony changes with the season. The form does not.</p>
-    <p class="section-body" style="margin-bottom:24px;">Our practitioner, who trained for twelve years in the Urasenke school, will guide you through the necessary movements — but not over-explain them. The ceremony is not a class. It is an encounter.</p>
-    <blockquote style="border-left:2px solid var(--urushi);padding:8px 0 8px 28px;margin:40px 0;font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;line-height:1.5;color:var(--sumi);">"The guest must master two things only: how to receive the bowl, and how to return it. Everything else is already decided."</blockquote>
-    <p class="section-body" style="margin-bottom:40px;">Duration is approximately sixty minutes. There is no additional charge for hotel guests — it is part of your stay.</p>
+    <h2 class="section-title" data-jp="変わらぬ<em>型。</em>" style="margin-bottom:28px;font-size:32px;">The form <em>that remains.</em></h2>
+    <p class="section-body" data-jp="茶道は1階の茶室——八畳、古典的な間取り——で行われます。秋冬は炉、春夏は風炉。季節によってお点前は変わります。しかし型は変わりません。" style="margin-bottom:24px;">The ceremony is conducted in the tea room on the ground floor — eight tatami mats, classical proportions — with a recessed hearth for autumn and winter, a portable brazier for spring and summer. The ceremony changes with the season. The form does not.</p>
+    <p class="section-body" data-jp="裏千家で十二年修行を積んだ茶人が、必要な動作を丁寧に案内します——ただし説明しすぎることはありません。茶道は授業ではなく、出会いです。" style="margin-bottom:24px;">Our practitioner, who trained for twelve years in the Urasenke school, will guide you through the necessary movements — but not over-explain them. The ceremony is not a class. It is an encounter.</p>
+    <blockquote data-jp="「客が身につけるべきことはふたつだけ——茶碗の受け方と、返し方。それ以外はすでに決まっている。」" style="border-left:2px solid var(--urushi);padding:8px 0 8px 28px;margin:40px 0;font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;line-height:1.5;color:var(--sumi);">"The guest must master two things only: how to receive the bowl, and how to return it. Everything else is already decided."</blockquote>
+    <p class="section-body" data-jp="所要時間は約60分。宿泊ゲストへの追加料金はなく、ご滞在に含まれています。" style="margin-bottom:40px;">Duration is approximately sixty minutes. There is no additional charge for hotel guests — it is part of your stay.</p>
     <div class="g-3col g-gap-2" style="margin-bottom:40px">
       <img src="images/tea-chakin.jpg" alt="Detail · Chakin" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <img src="images/tea-chawan.jpg" alt="Detail · Chawan" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
@@ -974,33 +974,33 @@ body { word-break:break-word; overflow-wrap:break-word; }
   </div>
   <div style="display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:76px;">
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:28px;">
-      <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);font-weight:300;">Experience Details</div>
+      <div data-jp="体験詳細" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);font-weight:300;">Experience Details</div>
       <div style="display:flex;flex-direction:column;gap:14px;">
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Duration</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">~60 minutes</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="所要時間" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Duration</span><span data-jp="約60分" style="font-size:13px;color:var(--sumi);font-weight:300;">~60 minutes</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Included</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">All guests</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="含まれる方" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Included</span><span data-jp="全宿泊者" style="font-size:13px;color:var(--sumi);font-weight:300;">All guests</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Capacity</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">2 – 4 guests</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="定員" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Capacity</span><span data-jp="2〜4名" style="font-size:13px;color:var(--sumi);font-weight:300;">2 – 4 guests</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Language</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">EN · JP</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="言語" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Language</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">EN · JP</span></div>
       </div>
       <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px;">Reserve Now</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
-      <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Other Experiences</div>
+      <div data-jp="他の体験" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Other Experiences</div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);">Ikebana Arrangement <span style="color:var(--sumi-light);">→</span></a>
-        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);">Shodo · Calligraphy <span style="color:var(--sumi-light);">→</span></a>
-        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;">Weaving Workshop <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);" data-jp="生け花 <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);" data-jp="書道 <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;" data-jp="織り体験 <span style="color:var(--sumi-light);">→</span></a>
       </div>
     </div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1012,14 +1012,14 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <!-- HEADER -->
 <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
   <span class="kicker">— Facilities · 施設</span>
-  <h1 class="section-title" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">The house, <em>in full.</em></h1>
-  <p class="section-body">Three rooms. A Shigaraki ceramic bath in the ground-floor room. A public onsen one minute on foot. Everything the neighbourhood carries — market, temple, canal — within walking distance.</p>
+  <h1 class="section-title" data-jp="この家を、<em>まるごと。</em>" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">The house, <em>in full.</em></h1>
+  <p class="section-body" data-jp="三つの部屋。1階に信楽焼浴槽。徒歩一分の銭湯。市場、お寺、運河——すべて徒歩圏内。">Three rooms. A Shigaraki ceramic bath in the ground-floor room. A public onsen one minute on foot. Everything the neighbourhood carries — market, temple, canal — within walking distance.</p>
 </div>
 <!-- FACILITIES GRID -->
 <div style="padding:64px 52px;border-bottom:1px solid var(--border);display:flex;flex-direction:column;gap:2px;">
@@ -1029,8 +1029,8 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div style="padding:44px 40px;display:flex;flex-direction:column;justify-content:center;">
       <span style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;display:block;">1F · 1Fルーム · In-room bath</span>
       <div style="font-family:var(--f-display);font-size:32px;font-weight:300;color:var(--sumi);line-height:1.1;margin-bottom:6px;">信楽焼浴槽</div>
-      <div style="font-size:12px;color:var(--sumi-light);margin-bottom:20px;letter-spacing:.04em;font-weight:200;">Shigaraki Ceramic Bath</div>
-      <p style="font-size:14px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:24px;">Hand-fired Shigaraki ceramic tub in the ground-floor room, opening to a private bamboo terrace. The oldest ceramic tradition in Japan — from kilns active since the Kamakura period.</p>
+      <div style="font-size:12px;color:var(--sumi-light);margin-bottom:20px;letter-spacing:.04em;font-weight:200;" data-jp="信楽焼浴槽">Shigaraki Ceramic Bath</div>
+      <p data-jp="1階の客室に設置された手びねりの信楽焼浴槽。プライベートな竹テラスに繋がります。日本最古の陶芸の伝統——鎌倉時代から続く窯元の作。" style="font-size:14px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:24px;">Hand-fired Shigaraki ceramic tub in the ground-floor room, opening to a private bamboo terrace. The oldest ceramic tradition in Japan — from kilns active since the Kamakura period.</p>
       <div class="chip-row" style="margin-bottom:28px;"><span class="chip chip-noren">1Fルーム only</span><span class="chip chip-sumi">Bamboo terrace view</span></div>
       <button type="button" class="btn btn-sumi" style="font-size:8px;padding:11px 24px;align-self:flex-start;">View Facility →</button>
     </div>
@@ -1043,7 +1043,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div class="room-card-eyebrow">Reception · Available all hours</div>
         <div class="room-card-title">コーヒー</div>
         <div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">UCC Coffee Station</div>
-        <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">UCC coffee machine installed at the front desk. Available any time. Ajari mochi — Kyoto's most celebrated confection — left in your room on arrival.</p>
+        <p data-jp="フロントにUCCコーヒーマシンを設置。いつでもご利用いただけます。チェックイン時に阿闍梨餅（京都を代表する和菓子）をお部屋にご用意。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">UCC coffee machine installed at the front desk. Available any time. Ajari mochi — Kyoto's most celebrated confection — left in your room on arrival.</p>
         <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Complimentary</span><span class="chip chip-sumi">All guests</span></div>
       </div>
     </div>
@@ -1053,7 +1053,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div class="room-card-eyebrow">1 min walk · Traditional sento</div>
         <div class="room-card-title">誠の湯</div>
         <div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">Neighbourhood Onsen</div>
-        <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">A traditional neighbourhood bath one minute on foot. We provide a voucher for all guests. The kind of place Kyoto still has — and most visitors never find.</p>
+        <p data-jp="徒歩一分の昔ながらの銭湯。全宿泊者に入浴券をご用意しています。京都にまだ残る、観光客にはなかなか見つけられない場所。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">A traditional neighbourhood bath one minute on foot. We provide a voucher for all guests. The kind of place Kyoto still has — and most visitors never find.</p>
         <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Voucher included</span><span class="chip chip-sumi">1 min walk</span></div>
       </div>
     </div>
@@ -1063,7 +1063,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div class="room-card-eyebrow">Select plans · Japanese-style</div>
         <div class="room-card-title">朝食</div>
         <div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">Japanese Breakfast</div>
-        <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Daily-changing Japanese breakfast included with select plans. A washoku-style meal composed around what is in season — a different arrangement each morning.</p>
+        <p data-jp="特定のプランには、日替わりの和朝食が含まれます。旬の食材を中心とした和食——毎朝異なる献立でご提供。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Daily-changing Japanese breakfast included with select plans. A washoku-style meal composed around what is in season — a different arrangement each morning.</p>
         <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Select plans</span><span class="chip chip-sumi">Changes daily</span></div>
       </div>
     </div>
@@ -1076,7 +1076,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div class="room-card-eyebrow">All rooms · Including large breeds</div>
         <div class="room-card-title">ペット歓迎</div>
         <div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">Pet Friendly</div>
-        <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">One of very few properties in Kyoto that welcomes large dogs. Dog amenities provided on request — bowls, beds, leash hooks. The bamboo terrace on the ground floor opens directly outside.</p>
+        <p data-jp="大型犬を受け入れる京都でも稀な宿のひとつ。リクエストでドッグアメニティ（食器、ベッド、リードフック）をご用意。1階の竹テラスから外へ直接出られます。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">One of very few properties in Kyoto that welcomes large dogs. Dog amenities provided on request — bowls, beds, leash hooks. The bamboo terrace on the ground floor opens directly outside.</p>
         <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">All sizes welcome</span><span class="chip chip-sumi">Dog supplies provided</span></div>
       </div>
     </div>
@@ -1086,7 +1086,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div class="room-card-eyebrow">All rooms · Reservation required</div>
         <div class="room-card-title">ミニキッチン</div>
         <div style="font-size:11px;color:var(--sumi-mid);margin-bottom:12px;font-weight:200;">Mini Kitchen</div>
-        <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Available in all three rooms on request. Refrigerator, microwave, IH cooktop. Kyoto Central Market is one minute on foot — the best reason in the city to cook for yourself.</p>
+        <p data-jp="全室リクエスト対応（要予約）。冷蔵庫、電子レンジ、IHコンロ。京都中央卸売市場まで徒歩一分——自炊の楽しさを感じられる環境です。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Available in all three rooms on request. Refrigerator, microwave, IH cooktop. Kyoto Central Market is one minute on foot — the best reason in the city to cook for yourself.</p>
         <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi">Reserve in advance</span><span class="chip chip-sumi">Market 1 min</span></div>
       </div>
     </div>
@@ -1094,9 +1094,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Shimabara</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#">Shimabara</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1108,7 +1108,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -1125,10 +1125,10 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <div class="sec-pad g-sidebar">
   <div>
-    <span class="kicker">— About This Facility</span>
-    <h2 class="section-title" style="font-size:32px;margin-bottom:28px;">Shigaraki clay, <em>bamboo, and steam.</em></h2>
-    <p class="section-body" style="margin-bottom:24px;">The bath is hand-fired Shigaraki ceramic — from kilns in the hills of Shiga that have been active since the Kamakura period. The 1F room on the ground floor is the only room with this bath, which opens directly to the private bamboo terrace.</p>
-    <p class="section-body" style="margin-bottom:40px;">Step from the bath to the terrace. The bamboo screens the outside world completely. The market one minute away is already open. There is no rush.</p>
+    <span class="kicker" data-jp="— この施設について">— About This Facility</span>
+    <h2 class="section-title" data-jp="信楽焼、<em>竹、そして湯気。</em>" style="font-size:32px;margin-bottom:28px;">Shigaraki clay, <em>bamboo, and steam.</em></h2>
+    <p class="section-body" data-jp="信楽焼の手びねり浴槽——鎌倉時代から続く滋賀の山中の窯元から。この浴槽はプライベートな竹テラスに直接面しており、1Fルームにのみ設置されています。" style="margin-bottom:24px;">The bath is hand-fired Shigaraki ceramic — from kilns in the hills of Shiga that have been active since the Kamakura period. The 1F room on the ground floor is the only room with this bath, which opens directly to the private bamboo terrace.</p>
+    <p class="section-body" data-jp="浴槽からテラスへ。竹が外の世界を完全に遮ります。一分先の市場はもう開いています。急ぐ必要はありません。" style="margin-bottom:40px;">Step from the bath to the terrace. The bamboo screens the outside world completely. The market one minute away is already open. There is no rush.</p>
     <div class="g-facility-bento" style="margin-bottom:40px">
       <img src="images/bath-hinoki.jpg" alt="Bath interior · Wide angle" style="height:100%;width:100%;height:100%;object-fit:cover;display:block;">
       <div style="display:grid;grid-template-rows:1fr 1fr;gap:2px;">
@@ -1136,7 +1136,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <img src="images/detail-water.jpg" alt="Detail · Water surface" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
-    <h3 style="font-family:var(--f-display);font-size:22px;font-weight:300;color:var(--sumi);margin-bottom:20px;">Other Facilities</h3>
+    <h3 data-jp="その他の施設" style="font-family:var(--f-display);font-size:22px;font-weight:300;color:var(--sumi);margin-bottom:20px;">Other Facilities</h3>
     <div class="g-3col g-gap-card">
       <div class="spot-card"><img src="images/facility-tea-room.jpg" alt="Tea Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Coffee</div><div class="spot-name">UCC Coffee</div><div class="spot-dist">Reception · All hours</div></div></div>
       <div class="spot-card"><img src="images/facility-reading-room.jpg" alt="Reading Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Public Bath</div><div class="spot-name">誠の湯</div><div class="spot-dist">1 min walk · Voucher included</div></div></div>
@@ -1145,34 +1145,34 @@ body { word-break:break-word; overflow-wrap:break-word; }
   </div>
   <div style="display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:76px;">
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:28px;">
-      <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);font-weight:300;">Facility Info</div>
+      <div data-jp="施設情報" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);font-weight:300;">Facility Info</div>
       <div style="display:flex;flex-direction:column;gap:14px;">
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Hours</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">1Fルーム · In-room</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="利用時間" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Hours</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">1Fルーム · In-room</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Location</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">1F · 1Fルーム</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="場所" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Location</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">1F · 1Fルーム</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Access</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">Guests only</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="利用" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Access</span><span data-jp="宿泊者のみ" style="font-size:13px;color:var(--sumi);font-weight:300;">Guests only</span></div>
         <div style="height:1px;background:var(--border-lt);"></div>
-        <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">Reservation</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">Required</span></div>
+        <div style="display:flex;justify-content:space-between;"><span data-jp="予約" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Reservation</span><span data-jp="要予約" style="font-size:13px;color:var(--sumi);font-weight:300;">Required</span></div>
       </div>
       <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px;">Reserve 1Fルーム</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
-      <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:14px;font-weight:300;">Included with stay</div>
+      <div data-jp="宿泊に含まれるもの" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:14px;font-weight:300;">Included with stay</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span>Shigaraki ceramic tub</div>
-        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span>Bamboo terrace access</div>
-        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span>Shampoo · Conditioner · Body wash</div>
-        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span>Bidet toilet</div>
+        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span data-jp="信楽焼浴槽">Shigaraki ceramic tub</div>
+        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span data-jp="竹テラスへのアクセス">Bamboo terrace access</div>
+        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span data-jp="シャンプー・コンディショナー・ボディウォッシュ">Shampoo · Conditioner · Body wash</div>
+        <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;display:flex;align-items:start;gap:10px;"><span style="color:var(--noren-lt);font-size:11px;margin-top:3px;">—</span data-jp="ウォシュレット">Bidet toilet</div>
       </div>
     </div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1184,22 +1184,22 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#" class="active" aria-current="page">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#" class="active" aria-current="page">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="height:400px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:url('images/hero-explore.jpg') center/cover no-repeat;">
   <span style="opacity:.12;font-size:11px;letter-spacing:.2em;">Photo · Nishi-Ōmon gate · Shimabara</span>
   <div style="position:absolute;bottom:56px;left:52px;">
     <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,238,231,.55);display:block;margin-bottom:16px;font-weight:300;">Shimabara — 島原</span>
-    <h1 style="font-family:var(--f-display);font-size:clamp(36px,4.5vw,60px);font-weight:300;color:rgba(242,238,231,.9);line-height:1;margin-bottom:10px;">Still here <em style="font-style:italic;color:rgba(242,238,231,.65);">after 1640.</em></h1>
+    <h1 data-jp="今も続く、<em style='font-style:italic;color:rgba(242,238,231,.65);'>1640年からの街。</em>" style="font-family:var(--f-display);font-size:clamp(36px,4.5vw,60px);font-weight:300;color:rgba(242,238,231,.9);line-height:1;margin-bottom:10px;">Still here <em style="font-style:italic;color:rgba(242,238,231,.65);">after 1640.</em></h1>
   </div>
 </div>
 <!-- FILTER TABS -->
 <div style="padding:0 52px;border-bottom:1px solid var(--border);display:flex;gap:0;" id="area-filters">
-  <button type="button" onclick="areaFilter(this,'all')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:var(--sumi);color:var(--washi);border:none;cursor:pointer;border-right:1px solid rgba(242,238,231,.1);">All</button>
-  <button type="button" onclick="areaFilter(this,'history')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;border-right:1px solid var(--border);">History</button>
-  <button type="button" onclick="areaFilter(this,'dining')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;border-right:1px solid var(--border);">Dining</button>
-  <button type="button" onclick="areaFilter(this,'craft')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;">Craft</button>
+  <button type="button" onclick="areaFilter(this,'all')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:var(--sumi);color:var(--washi);border:none;cursor:pointer;border-right:1px solid rgba(242,238,231,.1);" data-jp="すべて">All</button>
+  <button type="button" onclick="areaFilter(this,'history')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;border-right:1px solid var(--border);" data-jp="歴史">History</button>
+  <button type="button" onclick="areaFilter(this,'dining')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;border-right:1px solid var(--border);" data-jp="お食事">Dining</button>
+  <button type="button" onclick="areaFilter(this,'craft')" style="padding:16px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:300;background:transparent;color:var(--sumi-mid);border:none;cursor:pointer;" data-jp="工芸">Craft</button>
 </div>
 <!-- MAP + VENUE LIST -->
 <div class="sec-pad g-map-lg">
@@ -1215,9 +1215,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:2px;">
-    <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門 · Nishi-Ōmon Gate" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">History · 歴史</div><div class="spot-name">西大門 — Nishi-Ōmon Gate</div><div class="spot-dist" style="margin-bottom:8px;">2 min walk · Built 1640</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">One of two surviving gates of the original Shimabara quarter.</p></div></div>
-    <div class="spot-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Culture · 文化</div><div class="spot-name">角屋 — Sumiya Ochaya</div><div class="spot-dist" style="margin-bottom:8px;">4 min walk · Est. 1641</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">The last intact ozashiki ochaya in Shimabara. Ask us about the private evening opening.</p></div></div>
-    <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場 · Nishiki Market" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">Dining · 食</div><div class="spot-name">錦市場 — Nishiki Market</div><div class="spot-dist" style="margin-bottom:8px;">12 min walk · Open daily 9–18</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400 metres of covered market. Go before 10am. Ask for the overnight tsukemono.</p></div></div>
+    <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門 · Nishi-Ōmon Gate" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">History · 歴史</div><div class="spot-name">西大門 — Nishi-Ōmon Gate</div><div class="spot-dist" style="margin-bottom:8px;">2 min walk · Built 1640</div><p data-jp="元の島原の二つの現存する門のひとつ。" style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">One of two surviving gates of the original Shimabara quarter.</p></div></div>
+    <div class="spot-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Culture · 文化</div><div class="spot-name">角屋 — Sumiya Ochaya</div><div class="spot-dist" style="margin-bottom:8px;">4 min walk · Est. 1641</div><p data-jp="島原に残る最後のお座敷お茶屋。プライベートな夜間見学については、スタッフにお尋ねください。" style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">The last intact ozashiki ochaya in Shimabara. Ask us about the private evening opening.</p></div></div>
+    <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場 · Nishiki Market" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">Dining · 食</div><div class="spot-name">錦市場 — Nishiki Market</div><div class="spot-dist" style="margin-bottom:8px;">12 min walk · Open daily 9–18</div><p data-jp="400メートルの屋根付き市場。午前10時前に訪れるのがおすすめ。一晩漬けの漬物をぜひ。" style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400 metres of covered market. Go before 10am. Ask for the overnight tsukemono.</p></div></div>
   </div>
 </div>
 <!-- FULL GRID -->
@@ -1236,9 +1236,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Shimabara</a><a href="#">Access</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#">Shimabara</a><a href="#" data-jp="アクセス">Access</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1250,13 +1250,13 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" class="active" aria-current="page">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" class="active" aria-current="page">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
   <span class="kicker">— Journal · ジャーナル</span>
-  <h1 class="section-title" style="font-size:clamp(44px,5vw,72px);margin-bottom:16px;">Stories from <em>the address.</em></h1>
-  <p class="section-body">Essays on craft, history, season, and the particular life of Shimabara.</p>
+  <h1 class="section-title" data-jp="この場所から<em>届く話。</em>" style="font-size:clamp(44px,5vw,72px);margin-bottom:16px;">Stories from <em>the address.</em></h1>
+  <p class="section-body" data-jp="工芸、歴史、季節、そして島原という場所ならではの暮らしについてのエッセイ。">Essays on craft, history, season, and the particular life of Shimabara.</p>
 </div>
 <!-- FILTER -->
 <div style="padding:0 52px;border-bottom:1px solid var(--border);display:flex;gap:0;">
@@ -1273,8 +1273,8 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <img src="images/article-tayu.jpg" alt="Feature article image · Tayū house" style="aspect-ratio:16/9;border:1px solid var(--border);width:100%;object-fit:cover;display:block;">
     <div>
       <span style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:12px;display:block;font-weight:300;">Culture · 文化</span>
-      <h2 style="font-family:var(--f-display);font-size:clamp(22px,2.5vw,30px);font-weight:300;color:var(--sumi);line-height:1.2;margin-bottom:16px;">The last tayū house and the women who kept its form</h2>
-      <p style="font-size:14px;color:var(--sumi-mid);line-height:1.9;font-weight:300;margin-bottom:24px;">An account of the six remaining tayū performers in Shimabara, their training from the age of nine, and the single ochaya that still stages a formal ozashiki.</p>
+      <h2 data-jp="最後の太夫屋敷と、その型を守り続けた女性たち" style="font-family:var(--f-display);font-size:clamp(22px,2.5vw,30px);font-weight:300;color:var(--sumi);line-height:1.2;margin-bottom:16px;">The last tayū house and the women who kept its form</h2>
+      <p style="font-size:14px;color:var(--sumi-mid);line-height:1.9;font-weight:300;margin-bottom:24px;" data-jp="島原に残る6人の太夫、9歳からの修行、そして今もその型を保つ唯一のお茶屋についての記録。">An account of the six remaining tayū performers in Shimabara, their training from the age of nine, and the single ochaya that still stages a formal ozashiki.</p>
       <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">March 2025</span><span style="font-size:9px;color:var(--ash);">·</span><span style="font-size:11px;color:var(--sumi-light);font-weight:200;">6 min read</span></div>
       <button type="button" class="btn btn-sumi" style="font-size:9px;">Read Article →</button>
     </div>
@@ -1283,21 +1283,21 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- ARTICLES GRID -->
 <div style="padding:64px 52px 80px;border-bottom:1px solid var(--border);">
   <div class="g-3col g-gap-card mb-2">
-    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
-    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki Market morning" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
-    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title" data-jp="綾織：十二枚綜絖の機が語る平安の幾何学">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki Market morning" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title" data-jp="錦の朝：市場が混む前に食べるべきもの">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
+    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title" data-jp="冬の島原：観光客が去った後の街の風景">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
   </div>
   <div class="g-3col g-gap-card">
-    <div class="news-card"><img src="images/article-joinery.jpg" alt="Joinery workshop" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">The joiner who fitted our bath has never used a power tool</div><div class="news-card-date">November 2024 · 7 min read</div></div></div>
-    <div class="news-card"><img src="images/article-tea-practitioner.jpg" alt="Tea practitioner" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
-    <div class="news-card"><img src="images/room-hinoki-bath.jpg" alt="Hinoki bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Stay · 滞在</div><div class="news-card-title">Yoshino hinoki: why the bath timber matters more than the booking</div><div class="news-card-date">September 2024 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-joinery.jpg" alt="Joinery workshop" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title" data-jp="電動工具を一度も使ったことのない、浴槽を収めた指物師">The joiner who fitted our bath has never used a power tool</div><div class="news-card-date">November 2024 · 7 min read</div></div></div>
+    <div class="news-card"><img src="images/article-tea-practitioner.jpg" alt="Tea practitioner" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title" data-jp="四万回の反復：茶人との対話">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/room-hinoki-bath.jpg" alt="Hinoki bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Stay · 滞在</div><div class="news-card-title" data-jp="吉野檜：浴槽の木材が予約より重要な理由">Yoshino hinoki: why the bath timber matters more than the booking</div><div class="news-card-date">September 2024 · 4 min read</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Journal</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#" data-jp="ジャーナル">Journal</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1309,7 +1309,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" class="active" aria-current="page">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" class="active" aria-current="page">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <!-- BREADCRUMB -->
@@ -1328,7 +1328,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- ARTICLE HEADER -->
 <div style="padding:64px 52px 48px;border-bottom:1px solid var(--border);">
   <div style="max-width:min(720px,100%);">
-    <h1 style="font-family:var(--f-display);font-size:clamp(30px,3.5vw,48px);font-weight:300;line-height:1.1;color:var(--sumi);margin-bottom:20px;">The last tayū house and the women who kept its form</h1>
+    <h1 data-jp="最後の太夫屋敷と、その型を守り続けた女性たち" style="font-family:var(--f-display);font-size:clamp(30px,3.5vw,48px);font-weight:300;line-height:1.1;color:var(--sumi);margin-bottom:20px;">The last tayū house and the women who kept its form</h1>
     <p style="font-family:var(--f-display);font-style:italic;font-size:19px;font-weight:300;color:var(--sumi-mid);line-height:1.55;margin-bottom:28px;">An account of the six remaining tayū performers in Shimabara, their training from the age of nine, and the single ochaya that still stages a formal ozashiki.</p>
     <div style="display:flex;align-items:center;gap:20px;padding-top:20px;border-top:1px solid var(--border);">
       <span style="font-size:11px;color:var(--sumi-light);font-weight:200;letter-spacing:.06em;">By Ayanishiki Journal</span>
@@ -1342,22 +1342,22 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- ARTICLE BODY -->
 <div class="sec-pad g-sidebar">
   <article style="max-width:min(720px,100%);">
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">There are six of them left. The number itself is the first fact worth stating. Not because scarcity is the point, but because knowing six have continued — for how long, through what, out of what refusal or insistence — is more interesting than anything that can be said about their robes.</p>
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">The training begins at nine. It ends when the practitioner decides it has ended, which is almost never. The tayū — a title, not a rank — learns seventeen arts. Dance and calligraphy are two. The others are less easily named in English. One of them is called <em style="font-style:italic;color:var(--sumi);">the art of the introduction</em>.</p>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;" data-jp="残っているのは6人。その数字が最初に言うべき事実です。希少性が要点なのではなく、6人が続いてきたこと——どれほどの間、何を経て、いかなる拒絶や意志の上に——は、彼女たちの衣装について言えることよりはるかに興味深いのです。">There are six of them left. The number itself is the first fact worth stating. Not because scarcity is the point, but because knowing six have continued — for how long, through what, out of what refusal or insistence — is more interesting than anything that can be said about their robes.</p>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;" data-jp="修行は9歳から始まります。それが終わるのは、修行者自身が終わりだと決めたときで、それはほとんどありません。太夫——称号であり、位ではない——は17の芸を身につけます。舞と書道はそのふたつ。残りは英語では名づけにくいものです。そのひとつは「出会いの芸」と呼ばれます。">The training begins at nine. It ends when the practitioner decides it has ended, which is almost never. The tayū — a title, not a rank — learns seventeen arts. Dance and calligraphy are two. The others are less easily named in English. One of them is called <em style="font-style:italic;color:var(--sumi);">the art of the introduction</em>.</p>
     <blockquote style="border-left:2px solid var(--urushi);padding:8px 0 8px 28px;margin:40px 0;font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;line-height:1.5;color:var(--sumi);">"Every culture of formal hospitality is a culture of introductions. The tayū learned this long before the word 'hospitality' existed in Kyoto dialect."</blockquote>
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;">We met three of them in February, in a room that is also a record. The tatami mats are original — pre-Meiji, by the estimation of the shrine carpenter who replaced the skirting two years ago. The room is not shown to visitors. We were guests, not visitors, which requires a distinction we could not have made ourselves.</p>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;" data-jp="2月に3人と会いました。記録でもある部屋で。畳は本物——2年前に幅木を取り替えた宮大工の見立てでは、明治以前のもの。この部屋は見学者には公開されていません。私たちはゲストであり、見学者ではありませんでした——この違いは、自分たちだけでは主張できなかったものです。">We met three of them in February, in a room that is also a record. The tatami mats are original — pre-Meiji, by the estimation of the shrine carpenter who replaced the skirting two years ago. The room is not shown to visitors. We were guests, not visitors, which requires a distinction we could not have made ourselves.</p>
     <figure style="margin:0 0 40px;">
       <img src="images/article-sumiya.jpg" alt="Photo · Tea room interior · Sumiya Ochaya" style="aspect-ratio:4/3;border:1px solid var(--border);width:100%;object-fit:cover;display:block;">
       <figcaption style="font-size:11px;color:var(--sumi-light);font-weight:200;letter-spacing:.06em;margin-top:12px;padding-left:2px;">The cha-no-ma at Sumiya Ochaya, Shimabara. The fusuma were repapered in 2021 — the same pattern, the same supplier, the same person.</figcaption>
     </figure>
-    <h3 style="font-family:var(--f-display);font-size:24px;font-weight:300;color:var(--sumi);margin-bottom:20px;">The Ōmon-dōri question</h3>
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">The question we had come to ask — whether the practices of the quarter could continue without the structure of the quarter — was not a question that could be answered directly. We were offered tea instead. This was itself a kind of answer.</p>
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;">What the quarter preserves is not the performance. It is the context that makes the performance legible. The gate is not a monument to what has passed. It is the boundary that makes the inside different from the outside. As long as the gate stands, Ōmon-dōri is not simply a street in Shimogyo Ward.</p>
+    <h3 data-jp="大門通問題" style="font-family:var(--f-display);font-size:24px;font-weight:300;color:var(--sumi);margin-bottom:20px;">The Ōmon-dōri question</h3>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;" data-jp="私たちが聞きに来た問い——花街の仕組みなしに、花街の慣習が続けられるか——は直接答えられる問いではありませんでした。代わりにお茶が出されました。これ自体がひとつの答えでした。">The question we had come to ask — whether the practices of the quarter could continue without the structure of the quarter — was not a question that could be answered directly. We were offered tea instead. This was itself a kind of answer.</p>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;" data-jp="花街が保存しているのは、演目そのものではありません。演目を意味あるものにする文脈です。門は過去への記念碑ではありません。内側を外側と違うものにする境界線です。門が立っている限り、大門通は単なる下京区の一本道ではありません。">What the quarter preserves is not the performance. It is the context that makes the performance legible. The gate is not a monument to what has passed. It is the boundary that makes the inside different from the outside. As long as the gate stands, Ōmon-dōri is not simply a street in Shimogyo Ward.</p>
     <div class="g-2col g-gap-2" style="margin-bottom:40px">
       <figure style="margin:0;"><img src="images/detail-kanzashi.jpg" alt="Detail · Kanzashi" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">Kanzashi hairpin, cypress and lacquer, ca. 1920s.</figcaption></figure>
       <figure style="margin:0;"><img src="images/detail-obi.jpg" alt="Detail · Obi fold" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">The obi fold is trained over three years. It is not visible from the front.</figcaption></figure>
     </div>
-    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">We left before the ceremony was complete. This is the correct behaviour. The tayū does not see you out. The gate does. You step through it, and Shimogyo Ward resumes. The transition is immediate, and it is still, after 385 years, absolutely precise.</p>
+    <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;" data-jp="私たちは式典が終わる前に退室しました。これが正しい作法です。太夫は見送りません。門が見送ります。くぐり抜けると、下京区が再開します。その移行は即座で、385年後の今も、完全に精確です。">We left before the ceremony was complete. This is the correct behaviour. The tayū does not see you out. The gate does. You step through it, and Shimogyo Ward resumes. The transition is immediate, and it is still, after 385 years, absolutely precise.</p>
     <!-- SHARE -->
     <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 0;margin:40px 0;display:flex;align-items:center;gap:16px;">
       <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);font-weight:300;">Share</span>
@@ -1379,7 +1379,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
     <div style="border:1px solid var(--border);border-left:3px solid var(--urushi);background:var(--washi-warm);padding:24px;">
       <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,238,231,.55);margin-bottom:16px;font-weight:300;">Stay with us</div>
-      <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Three rooms on Ōmon-dōri. The gate is two minutes from your room.</p>
+      <p data-jp="大門通の三室。門はお部屋から2分です。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Three rooms on Ōmon-dōri. The gate is two minutes from your room.</p>
       <button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px;">Check Availability</button>
     </div>
   </div>
@@ -1388,16 +1388,16 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <div style="padding:72px 52px;border-bottom:1px solid var(--border);">
   <span style="font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);display:block;margin-bottom:32px;font-weight:300;">— Related Articles</span>
   <div class="g-3col g-gap-card">
-    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
-    <div class="news-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
-    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter gate" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title" data-jp="綾織：十二枚綜絖の機が語る平安の幾何学">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title" data-jp="四万回の反復：茶人との対話">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter gate" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title" data-jp="冬の島原：観光客が去った後の街の風景">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Journal</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#" data-jp="ジャーナル">Journal</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1409,87 +1409,87 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" data-jp="アクセス">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
   <span class="kicker">— FAQ · よくある質問</span>
   <h1 class="section-title" data-jp="よくある<em>ご質問。</em>" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">Questions, <em>answered plainly.</em></h1>
-  <p class="section-body">No ambiguity about what the stay includes. Ask anything that remains unclear.</p>
+  <p class="section-body" data-jp="宿泊内容について、わかりにくい点はありません。不明な点はなんでもお尋ねください。">No ambiguity about what the stay includes. Ask anything that remains unclear.</p>
 </div>
 <div class="sec-pad g-sidebar">
   <div>
     <!-- Category: Stay -->
     <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--urushi);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border);font-weight:300;">Stay · 滞在</div>
     <div class="accordion-item open">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="true"><span>What is included in the room rate?</span><span class="accordion-ico">−</span></button>
-      <div class="accordion-a">Plans vary — some include Japanese breakfast, others are room-only. All rooms include Ajari mochi on arrival, UCC coffee at the front desk, and a public bath voucher (誠の湯, 1 min on foot). Please check individual plan details at booking.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="true"><span data-jp="宿泊料金に含まれるものは何ですか？">What is included in the room rate?</span><span class="accordion-ico">−</span></button>
+      <div class="accordion-a" data-jp="プランによって異なります——和朝食付きプランと素泊まりプランがあります。全室共通で、チェックイン時の阿闍梨餅、フロントのUCCコーヒー、銭湯入浴券（誠の湯、徒歩1分）が含まれます。詳細はご予約時にご確認ください。">Plans vary — some include Japanese breakfast, others are room-only. All rooms include Ajari mochi on arrival, UCC coffee at the front desk, and a public bath voucher (誠の湯, 1 min on foot). Please check individual plan details at booking.</div>
     </div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>What is the check-in and check-out time?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">Check-in is from 15:00. Check-out is by 11:00. Early check-in and late check-out can sometimes be arranged — contact us directly before your arrival.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="チェックイン・チェックアウトの時間は？">What is the check-in and check-out time?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="チェックインは15:00から、チェックアウトは11:00まで。アーリーチェックインやレイトチェックアウトは場合によりご対応可能です——事前にご連絡ください。">Check-in is from 15:00. Check-out is by 11:00. Early check-in and late check-out can sometimes be arranged — contact us directly before your arrival.</div>
     </div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>Can children stay at Ayanishiki?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">We welcome guests of all ages. The house is particularly suited to adults and older children. Please contact us in advance if travelling with young children so we can prepare appropriately.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="子どもと宿泊できますか？">Can children stay at Ayanishiki?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="ご年齢を問わずお客様をお迎えしています。特に大人や年長のお子様に向いた空間です。幼いお子様とご旅行の場合は、事前にご連絡いただければ適切な準備をいたします。">We welcome guests of all ages. The house is particularly suited to adults and older children. Please contact us in advance if travelling with young children so we can prepare appropriately.</div>
     </div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>Is there a minimum stay?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">We have a two-night minimum. We have found that one night is not enough to settle into the house properly.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="最短宿泊日数はありますか？">Is there a minimum stay?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="最短2泊よりご宿泊いただけます。1泊では、この家に落ち着くには十分でないと感じているためです。">We have a two-night minimum. We have found that one night is not enough to settle into the house properly.</div>
     </div>
     <!-- Category: Rooms -->
     <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--urushi);margin:40px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border);font-weight:300;">Rooms · 客室</div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>Do all rooms have private bathrooms?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">All three rooms have private bathroom and toilet facilities. The 1F room features a Shigaraki ceramic bath opening to the bamboo terrace.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="全室に専用バスルームはありますか？">Do all rooms have private bathrooms?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="三室すべてに専用バスルームとトイレが完備されています。1Fルームには竹テラスに開く信楽焼浴槽が設置されています。">All three rooms have private bathroom and toilet facilities. The 1F room features a Shigaraki ceramic bath opening to the bamboo terrace.</div>
     </div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>Are the rooms air-conditioned?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">Yes. The cooling and heating systems are fitted discreetly within the existing architecture. The temperature is managed by the house rather than by individual room controls, within a range we consider appropriate to the season.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="客室にエアコンはありますか？">Are the rooms air-conditioned?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="はい。冷暖房は既存の建築に違和感なく設置されています。温度は個室ごとではなく、宿全体で季節に応じた適切な範囲に管理されています。">Yes. The cooling and heating systems are fitted discreetly within the existing architecture. The temperature is managed by the house rather than by individual room controls, within a range we consider appropriate to the season.</div>
     </div>
     <!-- Category: Reservations -->
     <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--urushi);margin:40px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border);font-weight:300;">Reservations · 予約</div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>How far in advance should I book?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">Cherry blossom season (late March–early April) and autumn foliage season (mid-November) book out four to six months in advance. For other periods, three to eight weeks is usually sufficient.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="どのくらい前に予約すればよいですか？">How far in advance should I book?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="桜の季節（3月下旬〜4月上旬）と紅葉の季節（11月中旬）は4〜6ヶ月前に満室になります。それ以外の時期は、3〜8週間前が目安です。">Cherry blossom season (late March–early April) and autumn foliage season (mid-November) book out four to six months in advance. For other periods, three to eight weeks is usually sufficient.</div>
     </div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>What is the cancellation policy?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">Cancellations more than 30 days before arrival incur no charge. Between 14 and 30 days: 30% of the total stay. Within 14 days: 100%. We recommend travel insurance for bookings made far in advance.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="キャンセルポリシーを教えてください。">What is the cancellation policy?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="到着30日以上前のキャンセルは無料。14〜30日前は合計の30%。14日以内は100%。早期予約の場合は旅行保険をお勧めします。">Cancellations more than 30 days before arrival incur no charge. Between 14 and 30 days: 30% of the total stay. Within 14 days: 100%. We recommend travel insurance for bookings made far in advance.</div>
     </div>
     <!-- Category: Access -->
     <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--urushi);margin:40px 0 24px;padding-bottom:12px;border-bottom:1px solid var(--border);font-weight:300;">Access · アクセス</div>
     <div class="accordion-item">
-      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span>How do I get from Kyoto Station?</span><span class="accordion-ico">+</span></button>
-      <div class="accordion-a">By JR: take the Sagano Line to Tanbaguchi Station (2 stops from Kyoto, approx. 4 min), then 5 min on foot. Alternatively, JR Umekoji-Kyotonishi Station (1 stop, 2 min) then 10 min walk. We can arrange taxi pickup — ask at booking.</div>
+      <button type="button" class="accordion-q" onclick="toggleAcc(this)" aria-expanded="false"><span data-jp="京都駅からのアクセスは？">How do I get from Kyoto Station?</span><span class="accordion-ico">+</span></button>
+      <div class="accordion-a" data-jp="JR嵯峨野線で丹波口駅（京都から2駅、約4分）、徒歩5分。または、JR梅小路京都西駅（1駅、2分）から徒歩10分。タクシーのお迎えも手配可能——ご予約時にご相談ください。">By JR: take the Sagano Line to Tanbaguchi Station (2 stops from Kyoto, approx. 4 min), then 5 min on foot. Alternatively, JR Umekoji-Kyotonishi Station (1 stop, 2 min) then 10 min walk. We can arrange taxi pickup — ask at booking.</div>
     </div>
   </div>
   <!-- SIDEBAR -->
   <div style="display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:76px;">
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:28px;">
-      <div style="font-family:var(--f-display);font-size:18px;font-weight:300;color:var(--sumi);margin-bottom:10px;line-height:1.3;">Still have questions?</div>
-      <p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">We prefer a telephone call, but respond to all written enquiries within one business day.</p>
+      <div data-jp="まだご不明な点がありますか？" style="font-family:var(--f-display);font-size:18px;font-weight:300;color:var(--sumi);margin-bottom:10px;line-height:1.3;">Still have questions?</div>
+      <p data-jp="お電話でのお問い合わせを推奨していますが、メールでのお問い合わせにも1営業日以内にご返信いたします。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">We prefer a telephone call, but respond to all written enquiries within one business day.</p>
       <div style="display:flex;flex-direction:column;gap:10px;">
         <button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px;">Contact Us</button>
         <button type="button" class="btn btn-outline" style="font-size:9px;width:100%;text-align:center;">Send Enquiry →</button>
       </div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
-      <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Quick Links</div>
+      <div data-jp="クイックリンク" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Quick Links</div>
       <div style="display:flex;flex-direction:column;gap:10px;">
-        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;">→ Rooms &amp; Suites</a>
-        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;">→ Check Availability</a>
-        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;">→ Experiences</a>
-        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;">→ Access &amp; Directions</a>
+        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;" data-jp="→ 客室一覧">→ Rooms &amp; Suites</a>
+        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;" data-jp="→ 空室確認">→ Check Availability</a>
+        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;" data-jp="→ 体験">→ Experiences</a>
+        <a href="#" style="font-size:13px;color:var(--sumi-mid);font-weight:300;" data-jp="→ アクセス">→ Access &amp; Directions</a>
       </div>
     </div>
   </div>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 — Shimabara, Shimogyo-ku, Kyoto.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Journal</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a><a href="#">Enquiries</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#" data-jp="ジャーナル">Journal</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a><a href="#" data-jp="お問い合わせ">Enquiries</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
 </div>
@@ -1501,14 +1501,14 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleNav(this)">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#">Concept</a></li><li><a href="#">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#">Journal</a></li><li><a href="#" class="active" aria-current="page">Access</a></li></ul>
+  <ul class="nav-links" id="nav-links-list"><li><a href="#">Home</a></li><li><a href="#" data-jp="コンセプト">Concept</a></li><li><a href="#" data-jp="客室">Rooms</a></li><li><a href="#">Shimabara</a></li><li><a href="#" data-jp="ジャーナル">Journal</a></li><li><a href="#" class="active" aria-current="page">Access</a></li></ul>
   <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">JP</button></span><button type="button" class="btn-book">Book · 予約</button></div>
 </nav>
 <div class="sec-pad g-2col g-wide align-e">
   <div>
     <span class="kicker" data-jp="— アクセス">— Access · アクセス</span>
-    <h1 class="section-title" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">Getting <em>here.</em></h1>
-    <p class="section-body">Ayanishiki sits in the Shimabara district of Shimogyo Ward — two JR stops from Kyoto Station, five minutes on foot. Kyoto's oldest licensed quarter, now a quiet residential neighbourhood. The Ōmon gate and central produce market are your two landmarks.</p>
+    <h1 class="section-title" data-jp="<em>アクセス。</em>" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">Getting <em>here.</em></h1>
+    <p class="section-body" data-jp="綾錦は下京区の島原地区に位置します——京都駅からJR2駅、徒歩5分。今は静かな住宅街となった、京都最古の公式花街。大門と中央卸売市場が目印です。">Ayanishiki sits in the Shimabara district of Shimogyo Ward — two JR stops from Kyoto Station, five minutes on foot. Kyoto's oldest licensed quarter, now a quiet residential neighbourhood. The Ōmon gate and central produce market are your two landmarks.</p>
   </div>
   <div style="border:1px solid var(--border);padding:20px 24px;background:var(--washi-warm);">
     <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:10px;font-weight:300;">Address</div>
@@ -1556,9 +1556,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">西新屋敷中堂寺町 58-5 — Shimabara, Shimogyo-ku, Kyoto 600-8816.</p></div>
-  <div><div class="ft-col-title">Stay</div><div class="ft-links"><a href="#">Rooms</a><a href="#">Availability</a></div></div>
-  <div><div class="ft-col-title">Explore</div><div class="ft-links"><a href="#">Concept</a><a href="#">Experiences</a><a href="#">Shimabara</a><a href="#">Journal</a><a href="#">FAQ</a></div></div>
-  <div><div class="ft-col-title">Contact</div><div class="ft-links"><a href="#">Reservations</a><a href="#">Enquiries</a><a href="#">Press</a></div></div>
+  <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" data-jp="客室">Rooms</a><a href="#" data-jp="空室確認">Availability</a></div></div>
+  <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" data-jp="コンセプト">Concept</a><a href="#" data-jp="体験">Experiences</a><a href="#">Shimabara</a><a href="#" data-jp="ジャーナル">Journal</a><a href="#" data-jp="よくある質問">FAQ</a></div></div>
+  <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" data-jp="ご予約">Reservations</a><a href="#" data-jp="お問い合わせ">Enquiries</a><a href="#" data-jp="プレス">Press</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦. Kyoto Shimabara. All rights reserved.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a><a class="ft-soc" href="#" aria-label="X (Twitter)">X</a></div></div>
 </footer>
 </div>
@@ -1579,6 +1579,15 @@ const BTN_TRANSLATIONS = {
   'View Experience →': '体験を見る →',
   'View All →': '全て見る →',
   'Book Online →': 'オンライン予約 →',
+  'Reserve Experience': '体験を予約する',
+  'Enquire →': 'お問い合わせ →',
+  'Reserve Now': '今すぐ予約',
+  'View Facility →': '施設を見る →',
+  'Contact Us': 'お問い合わせ',
+  'Send Enquiry →': 'メールで問い合わせる →',
+  'Area Guide →': 'エリアガイド →',
+  'All Nearby': '近くのスポット',
+  '— Related Articles': '— 関連記事',
   'Back to Rooms →': '← 客室一覧に戻る',
 };
 const NAV_TRANSLATIONS = {
@@ -1602,6 +1611,14 @@ const KICKER_TRANSLATIONS = {
   '— History': '— 歴史',
   '— 綾錦の精神': '— 綾錦の精神',
   '— About This Room': '— この部屋について',
+  '— About This Experience': '— この体験について',
+  '— About This Facility': '— この施設について',
+  '— Facilities · 施設': '— 施設',
+  '— FAQ · よくある質問': '— よくある質問',
+  '— 綾錦の精神': '— 綾錦の精神',
+  '— Our Identity': '— アイデンティティ',
+  '— Origin': '— 起源',
+  '— Values': '— 価値観',
   '— All Rooms Include': '— 全室共通設備',
   '— Access · アクセス': '— アクセス',
   '— Rooms': '— 客室',
@@ -1647,6 +1664,16 @@ function setLang(lang) {
       }
     } else {
       if (btn._en) { btn.textContent = btn._en; btn._en = null; }
+    }
+  });
+
+  // Swap kicker spans using KICKER_TRANSLATIONS
+  document.querySelectorAll('.kicker').forEach(k => {
+    const text = k.textContent.trim();
+    if (lang === 'jp') {
+      if (KICKER_TRANSLATIONS[text]) { k._en = text; k.textContent = KICKER_TRANSLATIONS[text]; }
+    } else {
+      if (k._en) { k.textContent = k._en; k._en = null; }
     }
   });
 }
