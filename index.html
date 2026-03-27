@@ -1589,5 +1589,20 @@ function areaFilter(btn,cat){
   btn.style.color='var(--washi)';
 }
 </script>
+<script>
+// Handle broken images: show placeholder background instead of broken icon
+document.querySelectorAll('img').forEach(function(img) {
+  function applyPlaceholder() {
+    img.style.background = 'var(--stone,#DDD7CE)';
+    img.style.minHeight = img.style.minHeight || '120px';
+    img.style.display = 'block';
+    img.setAttribute('alt', '');
+  }
+  if (!img.complete || img.naturalWidth === 0) {
+    img.addEventListener('error', applyPlaceholder);
+    if (img.complete && img.naturalWidth === 0) applyPlaceholder();
+  }
+});
+</script>
 </body>
 </html>
