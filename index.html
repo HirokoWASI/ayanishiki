@@ -77,12 +77,12 @@ a{text-decoration:none;color:inherit;}
 /* CARDS */
 .room-card{border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;}
 .room-card:hover{box-shadow:0 8px 32px rgba(17,17,16,.1);}
-.room-card-body{padding:28px 28px 32px;}
+.room-card-body{padding:32px 32px 36px;}
 .room-card-eyebrow{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:8px;font-weight:300;}
 .room-card-title{font-family:var(--f-display);font-size:22px;font-weight:300;color:var(--sumi);margin-bottom:6px;line-height:1.2;}
 .news-card{border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column;}
 .news-card:hover{box-shadow:0 8px 32px rgba(17,17,16,.1);}
-.news-card-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column;}
+.news-card-body{padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;}
 .news-card-cat{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;}
 .news-card-title{font-family:var(--f-display);font-size:18px;font-weight:300;color:var(--sumi);line-height:1.3;margin-bottom:10px;flex:1;}
 .news-card-date{font-size:11px;color:var(--sumi-light);font-weight:200;letter-spacing:.06em;margin-top:auto;padding-top:16px;border-top:1px solid var(--border);}
@@ -188,6 +188,7 @@ button:focus-visible, a:focus-visible {
 /* Gap modifiers */
 .g-wide  { gap:80px; }
 .g-gap-2 { gap:2px; }
+.g-gap-card { gap:20px; }
 
 /* Align modifiers */
 .align-c { align-items:center; }
@@ -212,9 +213,7 @@ h1,h2,h3 { overflow-wrap:break-word; word-break:break-word; }
 body { word-break:break-word; overflow-wrap:break-word; }
 .pull-quote { overflow-wrap:break-word; }
 
-/* Card overflow — allow focus ring to show */
-.room-card, .news-card, .spot-card { overflow:visible; }
-.room-card > .img-ph, .news-card > .img-ph, .spot-card > .img-ph { overflow:hidden; }
+/* Card overflow: hidden for clean layout; focus ring via :focus-within */
 
 /* ── TABLET 1024px ── */
 @media (max-width:1024px) {
@@ -458,8 +457,8 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <button type="button" class="btn btn-outline" style="font-size:9px;">Our Concept →</button>
   </div>
   <div class="g-2col g-gap-2">
-    <img src="images/interior-tokonoma.jpg" alt="Interior · Tokonoma" style="aspect-ratio:3/4;width:100%;height:100%;object-fit:cover;display:block;">
-    <img src="images/detail-shoji-light.jpg" alt="Detail · Shoji light" style="aspect-ratio:3/4;margin-top:48px;width:100%;height:100%;object-fit:cover;display:block;">
+    <img src="images/interior-tokonoma.jpg" alt="Interior · Tokonoma" style="aspect-ratio:3/4;width:100%;object-fit:cover;display:block;">
+    <img src="images/detail-shoji-light.jpg" alt="Detail · Shoji light" style="aspect-ratio:3/4;margin-top:48px;width:100%;object-fit:cover;display:block;">
   </div>
 </div>
 <!-- ROOMS TEASER -->
@@ -468,10 +467,10 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div><span class="kicker">— Guest Rooms</span><h2 class="section-title">Three rooms. <em>Three characters.</em></h2></div>
     <button type="button" class="btn btn-outline" style="font-size:9px;margin-bottom:4px;">View All Rooms →</button>
   </div>
-  <div class="g-3col g-gap-2">
-    <div class="room-card"><img src="images/room-detached.jpg" alt="1Fルーム · 1F Twin Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1F · 40㎡ · 1–5 guests</div><div class="room-card-title">1Fルーム</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">1F Twin Room — Terrace &amp; Bath</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Shigaraki Bath</span><span class="chip chip-sumi">Bamboo Terrace</span><span class="chip chip-sumi">Mini Kitchen</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
-    <div class="room-card"><img src="images/room-west.jpg" alt="西部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F West · 25㎡ · 1–4 guests</div><div class="room-card-title">西部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F West Room</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Tokonoma</span><span class="chip chip-sumi">Tea Room Theme</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F East · 21㎡ · 1–4 guests</div><div class="room-card-title">東部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F East Room</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi">Morning Sun</span><span class="chip chip-sumi">East-facing</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
+  <div class="g-3col g-gap-card">
+    <div class="room-card"><img src="images/room-detached.jpg" alt="1Fルーム · 1F Twin Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1F · 40㎡ · 1–5 guests</div><div class="room-card-title">1Fルーム</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">1F Twin Room — Terrace &amp; Bath</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Shigaraki Bath</span><span class="chip chip-sumi">Bamboo Terrace</span><span class="chip chip-sumi">Mini Kitchen</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
+    <div class="room-card"><img src="images/room-west.jpg" alt="西部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F West · 25㎡ · 1–4 guests</div><div class="room-card-title">西部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F West Room</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Tokonoma</span><span class="chip chip-sumi">Tea Room Theme</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F East · 21㎡ · 1–4 guests</div><div class="room-card-title">東部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F East Room</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi">Morning Sun</span><span class="chip chip-sumi">East-facing</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
   </div>
 </div>
 <!-- EXPERIENCE TEASER -->
@@ -499,7 +498,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       <p class="section-body" style="margin-bottom:32px;">Japan's oldest designated pleasure quarter. Still legally resident. Walk the Nishi-Ōmon gate. Find the one remaining ochaya. We know which counter to book.</p>
       <button type="button" class="btn btn-outline-lt" style="font-size:9px;">Area Guide →</button>
     </div>
-    <img src="images/shimabara-gate.jpg" alt="Photo · Nishi-Ōmon gate · Shimabara" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;">
+    <img src="images/shimabara-gate.jpg" alt="Photo · Nishi-Ōmon gate · Shimabara" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;">
   </div>
 </div>
 <!-- NEWS STRIP -->
@@ -508,7 +507,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div><span class="kicker">— Journal</span><h2 class="section-title" style="font-size:32px;">Recent stories</h2></div>
     <button type="button" class="btn btn-outline" style="font-size:9px;">View All →</button>
   </div>
-  <div class="g-3col g-gap-2">
+  <div class="g-3col g-gap-card">
     <div class="news-card"><img src="images/article-tayu.jpg" alt="The last tayū house" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">The last tayū house and the women who kept its form</div><div class="news-card-date">March 2025 · 6 min read</div></div></div>
     <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
     <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki market morning" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
@@ -650,9 +649,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <!-- 2-col grid -->
-  <div class="g-2col g-gap-2 mb-2">
-    <div class="room-card"><img src="images/room-west.jpg" alt="西部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F West · 25㎡ · 1–4 guests</div><div class="room-card-title">西部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F West Room</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Tokonoma</span><span class="chip chip-sumi">Tea Room Theme</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F East · 21㎡ · 1–4 guests</div><div class="room-card-title">東部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F East Room</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi">Morning Sun</span><span class="chip chip-sumi">East-facing</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
+  <div class="g-2col g-gap-card mb-2">
+    <div class="room-card"><img src="images/room-west.jpg" alt="西部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F West · 25㎡ · 1–4 guests</div><div class="room-card-title">西部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F West Room</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">Tokonoma</span><span class="chip chip-sumi">Tea Room Theme</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2F East · 21㎡ · 1–4 guests</div><div class="room-card-title">東部屋</div><div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;">2F East Room</div><p style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi">Morning Sun</span><span class="chip chip-sumi">East-facing</span></div><button type="button" class="btn btn-outline" style="font-size:8px;padding:10px 20px;">View Room</button></div></div>
   </div>
   <!-- Common amenities note -->
   <div style="border:1px solid var(--border);background:var(--washi-warm);padding:32px 40px;margin-top:8px;">
@@ -710,7 +709,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <p class="section-body" style="margin-bottom:40px;">A mini kitchen allows long stays to feel settled. The room accommodates up to five — families, small groups, guests who prefer space to hotel proportion. Dogs are welcome, including large breeds. Ajari mochi is left at arrival. The nearest public bath is one minute on foot.</p>
     <!-- IMAGE BENTO -->
     <div class="g-bento-lg" style="margin-bottom:40px">
-      <img src="images/room-engawa.jpg" alt="Room · Engawa view" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/room-engawa.jpg" alt="Room · Engawa view" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div style="display:grid;grid-template-rows:1fr 1fr;gap:2px;">
         <img src="images/interior-tokonoma.jpg" alt="Detail · Tokonoma" style="width:100%;height:100%;object-fit:cover;display:block;">
         <img src="images/room-hinoki-bath.jpg" alt="Detail · Hinoki bath" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -718,9 +717,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
     <!-- SECOND IMAGE ROW -->
     <div class="g-3col g-gap-2" style="margin-bottom:40px">
-      <img src="images/room-futon.jpg" alt="Futon arrangement" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
-      <img src="images/room-courtyard-dusk.jpg" alt="Courtyard at dusk" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
-      <img src="images/room-morning-light.jpg" alt="Morning light" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/room-futon.jpg" alt="Futon arrangement" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+      <img src="images/room-courtyard-dusk.jpg" alt="Courtyard at dusk" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+      <img src="images/room-morning-light.jpg" alt="Morning light" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
     </div>
     <div style="display:flex;gap:12px;">
       <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px 32px;">Reserve This Room</button>
@@ -812,9 +811,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- EXPERIENCES GRID — featured then 3-col -->
 <div style="padding:64px 52px;border-bottom:1px solid var(--border);">
   <!-- Featured: 2-col tall -->
-  <div class="g-2col g-gap-2 mb-2">
+  <div class="g-2col g-gap-card mb-2">
     <div style="border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column;" onmouseover="this.style.boxShadow='0 8px 32px rgba(17,17,16,.1)'" onmouseout="this.style.boxShadow='none'">
-      <img src="images/exp-tea-ceremony.jpg" alt="Tea ceremony · Tatami room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-tea-ceremony.jpg" alt="Tea ceremony · Tatami room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div style="padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;">
         <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;">Arts · 芸</div>
         <div style="font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--sumi);margin-bottom:6px;line-height:1.15;">茶の湯</div>
@@ -825,7 +824,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column;" onmouseover="this.style.boxShadow='0 8px 32px rgba(17,17,16,.1)'" onmouseout="this.style.boxShadow='none'">
-      <img src="images/exp-ikebana.jpg" alt="Ikebana · Cutting stems" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-ikebana.jpg" alt="Ikebana · Cutting stems" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div style="padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;">
         <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;">Arts · 芸</div>
         <div style="font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--sumi);margin-bottom:6px;line-height:1.15;">生け花</div>
@@ -837,9 +836,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <!-- 3-col grid -->
-  <div class="g-3col g-gap-2 mb-2">
+  <div class="g-3col g-gap-card mb-2">
     <div class="news-card" style="background:var(--washi-warm);">
-      <img src="images/exp-shodo.jpg" alt="Shodo · Calligraphy" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-shodo.jpg" alt="Shodo · Calligraphy" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body">
         <div class="news-card-cat">Arts · 芸</div>
         <div class="news-card-title" style="font-size:20px;">書道 — Shodo</div>
@@ -849,7 +848,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="news-card" style="background:var(--washi-warm);">
-      <img src="images/exp-weaving.jpg" alt="Weaving workshop" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-weaving.jpg" alt="Weaving workshop" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body">
         <div class="news-card-cat">Craft · 工芸</div>
         <div class="news-card-title" style="font-size:20px;">織り — Aya-ori Weaving</div>
@@ -859,7 +858,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="news-card" style="background:var(--washi-warm);">
-      <img src="images/exp-nishiki.jpg" alt="Nishiki Market morning tour" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-nishiki.jpg" alt="Nishiki Market morning tour" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body">
         <div class="news-card-cat">Food · 食</div>
         <div class="news-card-title" style="font-size:20px;">錦市場 — Market Walk</div>
@@ -870,9 +869,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <!-- 3-col second row -->
-  <div class="g-3col g-gap-2">
+  <div class="g-3col g-gap-card">
     <div class="news-card" style="background:var(--washi-warm);">
-      <img src="images/exp-kodo.jpg" alt="Kodo · Incense" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-kodo.jpg" alt="Kodo · Incense" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body">
         <div class="news-card-cat">Culture · 文化</div>
         <div class="news-card-title" style="font-size:20px;">香道 — Kodo</div>
@@ -882,7 +881,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="news-card" style="background:var(--washi-warm);">
-      <img src="images/exp-garden-walk.jpg" alt="Private garden walk" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-garden-walk.jpg" alt="Private garden walk" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body">
         <div class="news-card-cat">Culture · 文化</div>
         <div class="news-card-title" style="font-size:20px;">庭園 — Garden Walk</div>
@@ -892,7 +891,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="news-card" style="background:var(--stone);border:1px solid var(--border);">
-      <img src="images/exp-ozashiki.jpg" alt="Ozashiki · Sumiya" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/exp-ozashiki.jpg" alt="Ozashiki · Sumiya" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="news-card-body" style="background:var(--stone);">
         <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:10px;font-weight:300;">Culture · Special</div>
         <div style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);line-height:1.3;margin-bottom:10px;flex:1;">お座敷 — Evening Ozashiki</div>
@@ -945,9 +944,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <blockquote style="border-left:2px solid var(--urushi);padding:8px 0 8px 28px;margin:40px 0;font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;line-height:1.5;color:var(--sumi);">"The guest must master two things only: how to receive the bowl, and how to return it. Everything else is already decided."</blockquote>
     <p class="section-body" style="margin-bottom:40px;">Duration is approximately sixty minutes. There is no additional charge for hotel guests — it is part of your stay.</p>
     <div class="g-3col g-gap-2" style="margin-bottom:40px">
-      <img src="images/tea-chakin.jpg" alt="Detail · Chakin" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
-      <img src="images/tea-chawan.jpg" alt="Detail · Chawan" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
-      <img src="images/tea-hearth.jpg" alt="Detail · Hearth" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/tea-chakin.jpg" alt="Detail · Chakin" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+      <img src="images/tea-chawan.jpg" alt="Detail · Chawan" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+      <img src="images/tea-hearth.jpg" alt="Detail · Hearth" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
     </div>
     <div style="display:flex;gap:12px;">
       <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:300;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;border:none;font-size:9px;padding:13px 28px;">Reserve Experience</button>
@@ -1018,9 +1017,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <!-- 3-col row -->
-  <div class="g-3col g-gap-2 mb-2">
+  <div class="g-3col g-gap-card mb-2">
     <div class="room-card">
-      <img src="images/facility-tea-room.jpg" alt="UCC Coffee" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/facility-tea-room.jpg" alt="UCC Coffee" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="room-card-body">
         <div class="room-card-eyebrow">Reception · Available all hours</div>
         <div class="room-card-title">コーヒー</div>
@@ -1030,7 +1029,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="room-card">
-      <img src="images/facility-reading-room.jpg" alt="誠の湯 Public Bath" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/facility-reading-room.jpg" alt="誠の湯 Public Bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="room-card-body">
         <div class="room-card-eyebrow">1 min walk · Traditional sento</div>
         <div class="room-card-title">誠の湯</div>
@@ -1040,7 +1039,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="room-card">
-      <img src="images/facility-dining.jpg" alt="Breakfast" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/facility-dining.jpg" alt="Breakfast" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
       <div class="room-card-body">
         <div class="room-card-eyebrow">Select plans · Japanese-style</div>
         <div class="room-card-title">朝食</div>
@@ -1051,9 +1050,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <!-- 2-col row -->
-  <div class="g-2col g-gap-2">
+  <div class="g-2col g-gap-card">
     <div class="room-card">
-      <img src="images/facility-courtyard.jpg" alt="Pet Welcome" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/facility-courtyard.jpg" alt="Pet Welcome" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;">
       <div class="room-card-body">
         <div class="room-card-eyebrow">All rooms · Including large breeds</div>
         <div class="room-card-title">ペット歓迎</div>
@@ -1063,7 +1062,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div class="room-card">
-      <img src="images/facility-private.jpg" alt="Mini Kitchen" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/facility-private.jpg" alt="Mini Kitchen" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;">
       <div class="room-card-body">
         <div class="room-card-eyebrow">All rooms · Reservation required</div>
         <div class="room-card-title">ミニキッチン</div>
@@ -1119,10 +1118,10 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <h3 style="font-family:var(--f-display);font-size:22px;font-weight:300;color:var(--sumi);margin-bottom:20px;">Other Facilities</h3>
-    <div class="g-3col g-gap-2">
-      <div class="spot-card"><img src="images/facility-tea-room.jpg" alt="Tea Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Coffee</div><div class="spot-name">UCC Coffee</div><div class="spot-dist">Reception · All hours</div></div></div>
-      <div class="spot-card"><img src="images/facility-reading-room.jpg" alt="Reading Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Public Bath</div><div class="spot-name">誠の湯</div><div class="spot-dist">1 min walk · Voucher included</div></div></div>
-      <div class="spot-card"><img src="images/facility-dining.jpg" alt="Dining Room" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Breakfast</div><div class="spot-name">朝食</div><div class="spot-dist">Select plans · Daily-changing</div></div></div>
+    <div class="g-3col g-gap-card">
+      <div class="spot-card"><img src="images/facility-tea-room.jpg" alt="Tea Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Coffee</div><div class="spot-name">UCC Coffee</div><div class="spot-dist">Reception · All hours</div></div></div>
+      <div class="spot-card"><img src="images/facility-reading-room.jpg" alt="Reading Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Public Bath</div><div class="spot-name">誠の湯</div><div class="spot-dist">1 min walk · Voucher included</div></div></div>
+      <div class="spot-card"><img src="images/facility-dining.jpg" alt="Dining Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Breakfast</div><div class="spot-name">朝食</div><div class="spot-dist">Select plans · Daily-changing</div></div></div>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:76px;">
@@ -1197,23 +1196,23 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:2px;">
-    <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門 · Nishi-Ōmon Gate" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">History · 歴史</div><div class="spot-name">西大門 — Nishi-Ōmon Gate</div><div class="spot-dist" style="margin-bottom:8px;">2 min walk · Built 1640</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">One of two surviving gates of the original Shimabara quarter.</p></div></div>
-    <div class="spot-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Culture · 文化</div><div class="spot-name">角屋 — Sumiya Ochaya</div><div class="spot-dist" style="margin-bottom:8px;">4 min walk · Est. 1641</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">The last intact ozashiki ochaya in Shimabara. Ask us about the private evening opening.</p></div></div>
-    <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場 · Nishiki Market" style="aspect-ratio:16/9;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">Dining · 食</div><div class="spot-name">錦市場 — Nishiki Market</div><div class="spot-dist" style="margin-bottom:8px;">12 min walk · Open daily 9–18</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400 metres of covered market. Go before 10am. Ask for the overnight tsukemono.</p></div></div>
+    <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門 · Nishi-Ōmon Gate" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">History · 歴史</div><div class="spot-name">西大門 — Nishi-Ōmon Gate</div><div class="spot-dist" style="margin-bottom:8px;">2 min walk · Built 1640</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">One of two surviving gates of the original Shimabara quarter.</p></div></div>
+    <div class="spot-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">Culture · 文化</div><div class="spot-name">角屋 — Sumiya Ochaya</div><div class="spot-dist" style="margin-bottom:8px;">4 min walk · Est. 1641</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">The last intact ozashiki ochaya in Shimabara. Ask us about the private evening opening.</p></div></div>
+    <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場 · Nishiki Market" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">Dining · 食</div><div class="spot-name">錦市場 — Nishiki Market</div><div class="spot-dist" style="margin-bottom:8px;">12 min walk · Open daily 9–18</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400 metres of covered market. Go before 10am. Ask for the overnight tsukemono.</p></div></div>
   </div>
 </div>
 <!-- FULL GRID -->
 <div style="padding:64px 52px;border-bottom:1px solid var(--border);background:var(--washi-warm);">
   <span style="font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);display:block;margin-bottom:32px;font-weight:300;">— All Nearby</span>
   <div class="g-4col">
-    <div class="spot-card"><img src="images/spot-yoshiminedera.jpg" alt="Yoshiminedera" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">善峯寺</div><div class="spot-dist">25 min · Temple</div></div></div>
-    <div class="spot-card"><img src="images/spot-tofukuji.jpg" alt="Tofukuji" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">東福寺</div><div class="spot-dist">18 min · Zen temple</div></div></div>
-    <div class="spot-card"><img src="images/spot-fushimi-inari.jpg" alt="Fushimi Inari" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">伏見稲荷</div><div class="spot-dist">22 min · Shrine</div></div></div>
-    <div class="spot-card"><img src="images/spot-kawai-shrine.jpg" alt="Kawai Shrine" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">河合神社</div><div class="spot-dist">15 min · Shrine</div></div></div>
-    <div class="spot-card"><img src="images/spot-pontocho.jpg" alt="Pontocho Alley" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">先斗町</div><div class="spot-dist">10 min · Dining lane</div></div></div>
-    <div class="spot-card"><img src="images/spot-kiyamachi.jpg" alt="Kiyamachi" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">木屋町</div><div class="spot-dist">12 min · Canal street</div></div></div>
-    <div class="spot-card"><img src="images/spot-weaving-studio.jpg" alt="Weaving Studio" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">西陣織工房</div><div class="spot-dist">8 min · Craft</div></div></div>
-    <div class="spot-card"><img src="images/spot-botanical.jpg" alt="Botanical Garden" style="aspect-ratio:3/2;width:100%;height:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">府立植物園</div><div class="spot-dist">30 min · Garden</div></div></div>
+    <div class="spot-card"><img src="images/spot-yoshiminedera.jpg" alt="Yoshiminedera" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">善峯寺</div><div class="spot-dist">25 min · Temple</div></div></div>
+    <div class="spot-card"><img src="images/spot-tofukuji.jpg" alt="Tofukuji" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">東福寺</div><div class="spot-dist">18 min · Zen temple</div></div></div>
+    <div class="spot-card"><img src="images/spot-fushimi-inari.jpg" alt="Fushimi Inari" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">伏見稲荷</div><div class="spot-dist">22 min · Shrine</div></div></div>
+    <div class="spot-card"><img src="images/spot-kawai-shrine.jpg" alt="Kawai Shrine" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">河合神社</div><div class="spot-dist">15 min · Shrine</div></div></div>
+    <div class="spot-card"><img src="images/spot-pontocho.jpg" alt="Pontocho Alley" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">先斗町</div><div class="spot-dist">10 min · Dining lane</div></div></div>
+    <div class="spot-card"><img src="images/spot-kiyamachi.jpg" alt="Kiyamachi" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">木屋町</div><div class="spot-dist">12 min · Canal street</div></div></div>
+    <div class="spot-card"><img src="images/spot-weaving-studio.jpg" alt="Weaving Studio" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">西陣織工房</div><div class="spot-dist">8 min · Craft</div></div></div>
+    <div class="spot-card"><img src="images/spot-botanical.jpg" alt="Botanical Garden" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">府立植物園</div><div class="spot-dist">30 min · Garden</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
@@ -1252,7 +1251,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <div style="padding:64px 52px;border-bottom:1px solid var(--border);">
   <span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-light);display:block;margin-bottom:28px;font-weight:300;">— Featured</span>
   <div class="g-featured-article">
-    <img src="images/article-tayu.jpg" alt="Feature article image · Tayū house" style="aspect-ratio:16/9;border:1px solid var(--border);width:100%;height:100%;object-fit:cover;display:block;">
+    <img src="images/article-tayu.jpg" alt="Feature article image · Tayū house" style="aspect-ratio:16/9;border:1px solid var(--border);width:100%;object-fit:cover;display:block;">
     <div>
       <span style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:12px;display:block;font-weight:300;">Culture · 文化</span>
       <h2 style="font-family:var(--f-display);font-size:clamp(22px,2.5vw,30px);font-weight:300;color:var(--sumi);line-height:1.2;margin-bottom:16px;">The last tayū house and the women who kept its form</h2>
@@ -1264,15 +1263,15 @@ body { word-break:break-word; overflow-wrap:break-word; }
 </div>
 <!-- ARTICLES GRID -->
 <div style="padding:64px 52px 80px;border-bottom:1px solid var(--border);">
-  <div class="g-3col g-gap-2 mb-2">
-    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
-    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki Market morning" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
-    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
+  <div class="g-3col g-gap-card mb-2">
+    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki Market morning" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date">January 2025 · 3 min read</div></div></div>
+    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
   </div>
-  <div class="g-3col g-gap-2">
-    <div class="news-card"><img src="images/article-joinery.jpg" alt="Joinery workshop" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">The joiner who fitted our bath has never used a power tool</div><div class="news-card-date">November 2024 · 7 min read</div></div></div>
-    <div class="news-card"><img src="images/article-tea-practitioner.jpg" alt="Tea practitioner" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
-    <div class="news-card"><img src="images/room-hinoki-bath.jpg" alt="Hinoki bath" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Stay · 滞在</div><div class="news-card-title">Yoshino hinoki: why the bath timber matters more than the booking</div><div class="news-card-date">September 2024 · 4 min read</div></div></div>
+  <div class="g-3col g-gap-card">
+    <div class="news-card"><img src="images/article-joinery.jpg" alt="Joinery workshop" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">The joiner who fitted our bath has never used a power tool</div><div class="news-card-date">November 2024 · 7 min read</div></div></div>
+    <div class="news-card"><img src="images/article-tea-practitioner.jpg" alt="Tea practitioner" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/room-hinoki-bath.jpg" alt="Hinoki bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Stay · 滞在</div><div class="news-card-title">Yoshino hinoki: why the bath timber matters more than the booking</div><div class="news-card-date">September 2024 · 4 min read</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
@@ -1329,15 +1328,15 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <blockquote style="border-left:2px solid var(--urushi);padding:8px 0 8px 28px;margin:40px 0;font-family:var(--f-display);font-style:italic;font-size:22px;font-weight:300;line-height:1.5;color:var(--sumi);">"Every culture of formal hospitality is a culture of introductions. The tayū learned this long before the word 'hospitality' existed in Kyoto dialect."</blockquote>
     <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;">We met three of them in February, in a room that is also a record. The tatami mats are original — pre-Meiji, by the estimation of the shrine carpenter who replaced the skirting two years ago. The room is not shown to visitors. We were guests, not visitors, which requires a distinction we could not have made ourselves.</p>
     <figure style="margin:0 0 40px;">
-      <img src="images/article-sumiya.jpg" alt="Photo · Tea room interior · Sumiya Ochaya" style="aspect-ratio:4/3;border:1px solid var(--border);width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="images/article-sumiya.jpg" alt="Photo · Tea room interior · Sumiya Ochaya" style="aspect-ratio:4/3;border:1px solid var(--border);width:100%;object-fit:cover;display:block;">
       <figcaption style="font-size:11px;color:var(--sumi-light);font-weight:200;letter-spacing:.06em;margin-top:12px;padding-left:2px;">The cha-no-ma at Sumiya Ochaya, Shimabara. The fusuma were repapered in 2021 — the same pattern, the same supplier, the same person.</figcaption>
     </figure>
     <h3 style="font-family:var(--f-display);font-size:24px;font-weight:300;color:var(--sumi);margin-bottom:20px;">The Ōmon-dōri question</h3>
     <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">The question we had come to ask — whether the practices of the quarter could continue without the structure of the quarter — was not a question that could be answered directly. We were offered tea instead. This was itself a kind of answer.</p>
     <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:36px;">What the quarter preserves is not the performance. It is the context that makes the performance legible. The gate is not a monument to what has passed. It is the boundary that makes the inside different from the outside. As long as the gate stands, Ōmon-dōri is not simply a street in Shimogyo Ward.</p>
     <div class="g-2col g-gap-2" style="margin-bottom:40px">
-      <figure style="margin:0;"><img src="images/detail-kanzashi.jpg" alt="Detail · Kanzashi" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;height:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">Kanzashi hairpin, cypress and lacquer, ca. 1920s.</figcaption></figure>
-      <figure style="margin:0;"><img src="images/detail-obi.jpg" alt="Detail · Obi fold" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;height:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">The obi fold is trained over three years. It is not visible from the front.</figcaption></figure>
+      <figure style="margin:0;"><img src="images/detail-kanzashi.jpg" alt="Detail · Kanzashi" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">Kanzashi hairpin, cypress and lacquer, ca. 1920s.</figcaption></figure>
+      <figure style="margin:0;"><img src="images/detail-obi.jpg" alt="Detail · Obi fold" style="aspect-ratio:1/1;border:1px solid var(--border);width:100%;object-fit:cover;display:block;"><figcaption style="font-size:10px;color:var(--sumi-light);font-weight:200;margin-top:8px;">The obi fold is trained over three years. It is not visible from the front.</figcaption></figure>
     </div>
     <p style="font-size:16px;font-weight:300;line-height:2;color:var(--sumi-mid);margin-bottom:28px;">We left before the ceremony was complete. This is the correct behaviour. The tayū does not see you out. The gate does. You step through it, and Shimogyo Ward resumes. The transition is immediate, and it is still, after 385 years, absolutely precise.</p>
     <!-- SHARE -->
@@ -1369,10 +1368,10 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- RELATED ARTICLES -->
 <div style="padding:72px 52px;border-bottom:1px solid var(--border);">
   <span style="font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);display:block;margin-bottom:32px;font-weight:300;">— Related Articles</span>
-  <div class="g-3col g-gap-2">
-    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
-    <div class="news-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
-    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter gate" style="aspect-ratio:4/3;width:100%;height:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
+  <div class="g-3col g-gap-card">
+    <div class="news-card"><img src="images/article-ayaori.jpg" alt="Aya-ori weaving" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Craft · 工芸</div><div class="news-card-title">Aya-ori weaving: how a twelve-shaft loom encodes Heian geometry</div><div class="news-card-date">February 2025 · 4 min read</div></div></div>
+    <div class="news-card"><img src="images/article-sumiya.jpg" alt="Sumiya Ochaya" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Culture · 文化</div><div class="news-card-title">Forty thousand repetitions: a conversation with our tea practitioner</div><div class="news-card-date">October 2024 · 5 min read</div></div></div>
+    <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter gate" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date">December 2024 · 5 min read</div></div></div>
   </div>
 </div>
 <footer class="site-footer">
