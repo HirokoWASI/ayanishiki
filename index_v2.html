@@ -752,18 +752,18 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <div style="border:1px solid var(--border);background:var(--washi-warm);padding:32px 40px;margin-top:8px;">
     <span class="kicker" data-jp="— 全室共通設備" style="margin-bottom:12px;">— All Rooms Include</span>
     <!-- 修正#18: 等間隔・左寄せ -->
-    <!-- 再修正#18: 空divを削除して順番に並べ直し、等間隔左寄せグリッドを修正 -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px 24px;justify-items:start;">
-      <!-- 修正#31: UCCコーヒー削除 -->
-      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">TV</div>
-      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">寝衣</div>
-      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">ウォシュレット</div>
+    <!-- 再修正#18: UCCコーヒーマシン（フロント）追加、カラムフロー配置に変更 -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:12px 24px;justify-items:start;">
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">UCCコーヒーマシン（フロント）</div>
       <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">阿闍梨餅（到着時）</div>
-      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">WiFi</div>
-      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">アメニティ</div>
       <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">冷蔵庫</div>
       <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">電子レンジ</div>
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">TV</div>
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">WiFi</div>
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">寝衣</div>
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">アメニティ</div>
       <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">銭湯無料入浴券（徒歩1分）</div>
+      <div style="font-size:13px;color:var(--sumi-mid);font-weight:300;">ウォシュレット</div>
     </div>
   </div>
 </div>
