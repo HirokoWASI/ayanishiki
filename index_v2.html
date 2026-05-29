@@ -1297,9 +1297,10 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <button type="button" onclick="areaFilter(this,'craft')" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;background:transparent;color:var(--sumi);border:none;cursor:pointer;" data-jp="工芸">Craft</button>
 </div>
 <!-- 修正#37/#49: 島原ページ説明変更・英訳削除（画像参照） -->
+<!-- 再修正#37: 地図を他の要素と同じ高さに。4列等幅グリッドに変更 -->
 <!-- MAP + VENUE LIST -->
-<div class="sec-pad g-map-lg">
-  <div style="background:#D4D8C8;border:1px solid var(--border);height:560px;position:relative;display:flex;align-items:flex-start;justify-content:flex-start;padding:20px;">
+<div class="sec-pad" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;">
+  <div style="background:#D4D8C8;border:1px solid var(--border);position:relative;display:flex;align-items:flex-start;justify-content:flex-start;padding:20px;">
     <span data-jp="地図 · 島原周辺" style="font-size:9px;letter-spacing:.14em;color:var(--sumi-light);text-transform:uppercase;">Map · Shimabara &amp; Surroundings</span>
     <div style="position:absolute;top:38%;left:40%;width:12px;height:12px;border-radius:50%;background:var(--urushi);border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2);"></div>
     <div style="position:absolute;top:52%;left:28%;width:8px;height:8px;border-radius:50%;background:var(--sumi);border:1px solid white;"></div>
@@ -1310,11 +1311,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
       <div style="display:flex;align-items:center;gap:6px;background:white;padding:5px 10px;font-size:9px;color:var(--sumi);font-family:var(--f-ui);"><div style="width:8px;height:8px;border-radius:50%;background:var(--sumi);"></div>Nearby</div>
     </div>
   </div>
-  <div style="display:flex;flex-direction:column;gap:2px;">
-    <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">歴史</div><div class="spot-name">西大門</div><!-- 修正#37: 英訳削除（画像参照） --><div class="spot-dist" style="margin-bottom:8px;">徒歩2分 · 1640年建立</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">元の島原の二つの現存する門のひとつ。</p></div></div>
-    <div class="spot-card"><img src="images/article-sumiya.jpg" alt="角屋" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">文化</div><div class="spot-name">角屋</div><div class="spot-dist" style="margin-bottom:8px;">徒歩4分 · 1641年創業</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">島原に残る最後のお座敷お茶屋。プライベートな夜間見学については、スタッフにお尋ねください。</p></div></div>
-    <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">食</div><div class="spot-name">錦市場</div><div class="spot-dist" style="margin-bottom:8px;">徒歩12分 · 毎日9〜18時</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400メートルの屋根付き市場。午前10時前に訪れるのがおすすめ。一晩漬けの漬物をぜひ。</p></div></div>
-  </div>
+  <div class="spot-card"><img src="images/shimabara-gate.jpg" alt="西大門" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:6px;font-weight:300;">歴史</div><div class="spot-name">西大門</div><div class="spot-dist" style="margin-bottom:8px;">徒歩2分 · 1640年建立</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">元の島原の二つの現存する門のひとつ。</p></div></div>
+  <div class="spot-card"><img src="images/article-sumiya.jpg" alt="角屋" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:6px;font-weight:300;">文化</div><div class="spot-name">角屋</div><div class="spot-dist" style="margin-bottom:8px;">徒歩4分 · 1641年創業</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">島原に残る最後のお座敷お茶屋。プライベートな夜間見学については、スタッフにお尋ねください。</p></div></div>
+  <div class="spot-card"><img src="images/exp-nishiki.jpg" alt="錦市場" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:6px;font-weight:300;">食</div><div class="spot-name">錦市場</div><div class="spot-dist" style="margin-bottom:8px;">徒歩12分 · 毎日9〜18時</div><p style="font-size:12px;color:var(--sumi-mid);line-height:1.8;font-weight:300;">400メートルの屋根付き市場。午前10時前に訪れるのがおすすめ。一晩漬けの漬物をぜひ。</p></div></div>
 </div>
 <!-- FULL GRID -->
 <div style="padding:64px 52px;border-bottom:1px solid var(--border);background:var(--washi-warm);">
