@@ -747,6 +747,71 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
     <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
   </div>
+  <!-- ════ 施設コンテンツ（p6より統合） ════ -->
+  <!-- HEADER -->
+  <!-- 修正#30/#47b: 施設ページ キャッチコピー変更・1棟貸しボタン追加 -->
+  <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
+    <span class="kicker">— Facilities · 施設</span>
+    <h1 class="section-title" data-jp="町家をまるごと<em>愉しむ</em>" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">町家をまるごと<em>愉しむ</em></h1>
+    <p class="section-body" data-jp="三つの部屋。1階に信楽焼浴槽。徒歩一分の銭湯。市場、お寺、運河——すべて徒歩圏内。1棟貸し切りも承ります。">三つの部屋。1階に信楽焼浴槽。徒歩一分の銭湯。市場、お寺、運河——すべて徒歩圏内。1棟貸し切りも承ります。</p>
+    <div style="margin-top:24px;display:flex;gap:12px;">
+      <button type="button" class="btn btn-sumi" onclick="goPage(13)">1棟貸しご案内 →</button>
+    </div>
+  </div>
+  <!-- FACILITIES GRID -->
+  <!-- 修正#31/#48: 全5施設カードを等サイズで表示 -->
+  <div style="padding:64px 52px;border-bottom:1px solid var(--border);">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px;">
+      <div class="room-card">
+        <img src="images/bath-hinoki.jpg" alt="信楽焼浴槽 · Shigaraki Bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="room-card-body">
+          <div class="room-card-eyebrow" data-jp="1階客室 · 専用浴室">1F · In-room bath</div>
+          <div class="room-card-title">信楽焼浴槽</div>
+          <div style="font-size:11px;color:var(--sumi-light);margin-bottom:12px;font-weight:200;" data-jp="信楽焼浴槽">Shigaraki Ceramic Bath</div>
+          <p data-jp="1階の客室に設置された手びねりの信楽焼浴槽。プライベートな竹テラスに繋がります。日本最古の陶芸の伝統——鎌倉時代から続く窯元の作。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Hand-fired Shigaraki ceramic tub in the ground-floor room, opening to a private bamboo terrace. The oldest ceramic tradition in Japan — from kilns active since the Kamakura period.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren">1階客室 only</span><span class="chip chip-sumi" data-jp="竹テラス眺望">Bamboo terrace view</span></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="images/facility-reading-room.jpg" alt="誠の湯 Public Bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="room-card-body">
+          <div class="room-card-eyebrow" data-jp="昔ながらの銭湯">Traditional sento</div>
+          <div class="room-card-title">誠の湯</div>
+          <p data-jp="情緒たっぷりの雰囲気。宿泊されるすべてのお客様に無料の入浴券をご用意しています。京都にまだ残る、自分ではなかなか見つけられない場所です。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">A traditional neighbourhood bath one minute on foot. We provide a voucher for all guests. The kind of place Kyoto still has — and most visitors never find.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="無料入浴券付">Voucher included</span><span class="chip chip-sumi" data-jp="徒歩1分">1 min walk</span></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="images/facility-dining.jpg" alt="Breakfast" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="room-card-body">
+          <div class="room-card-eyebrow" data-jp="特別プラン">Select plans · Japanese-style</div>
+          <div class="room-card-title">和朝食</div>
+          <p data-jp="一部のプランでは、旬の食材を中心とした和食を、毎朝異なる献立でご提供します。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Daily-changing Japanese breakfast included with select plans. A washoku-style meal composed around what is in season — a different arrangement each morning.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="一部プランのみ">Select plans</span><span class="chip chip-sumi" data-jp="毎日変わります">Changes daily</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="room-card">
+        <img src="images/facility-courtyard.jpg" alt="Pet Welcome" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="room-card-body">
+          <div class="room-card-eyebrow" data-jp="全室 · 大型犬含む">All rooms · Including large breeds</div>
+          <div class="room-card-title">ペット歓迎</div>
+          <p data-jp="大型犬を受け入れる京都でも稀な宿のひとつ。ご希望があればドッグアメニティ（食器、ベッド、リードフック）をご用意。1階の竹テラスから外へ直接出られます。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">One of very few properties in Kyoto that welcomes large dogs. Dog amenities provided on request — bowls, beds, leash hooks. The bamboo terrace on the ground floor opens directly outside.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="ペットサイズ不問">All sizes welcome</span><span class="chip chip-sumi" data-jp="ドッグ用品あり">Dog supplies provided</span></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <img src="images/facility-private.jpg" alt="Mini Kitchen" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="room-card-body">
+          <div class="room-card-eyebrow" data-jp="全室 · 要予約">All rooms · Reservation required</div>
+          <div class="room-card-title">ミニキッチン</div>
+          <p data-jp="全室リクエスト対応（要予約）。冷蔵庫、電子レンジ、IHコンロ。京都中央卸売市場までは徒歩一分——自炊の楽しさを感じられる環境です。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:16px;">Available in all three rooms on request. Refrigerator, microwave, IH cooktop. Kyoto Central Market is one minute on foot — the best reason in the city to cook for yourself.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="要予約">Reserve in advance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ════ 体験コンテンツ（p4より統合） ════ -->
   <!-- 修正#19: 体験ページ見出し変更（画像参照） -->
   <!-- HEADER -->
