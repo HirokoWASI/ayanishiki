@@ -747,6 +747,125 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
     <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
   </div>
+  <!-- ════ 体験コンテンツ（p4より統合） ════ -->
+  <!-- 修正#19: 体験ページ見出し変更（画像参照） -->
+  <!-- HEADER -->
+  <div class="sec-pad g-2col g-wide align-e">
+    <div>
+      <span class="kicker">— 体験</span>
+      <!-- 再修正#19: 見出し「穏やかに」→「緩やかに」、本文冒頭テキスト追加 -->
+      <h1 class="section-title" data-jp="緩やかに流れる時間" style="font-size:clamp(40px,5vw,64px);margin-bottom:16px;">Days without <em>urgency.</em></h1>
+      <p class="section-body" data-jp="京都はスケジュールを立てずに訪れるのがお薦め。徒歩圏内に、ツアーでは行けない見所がたくさんあります。嵐山までは電車で12分。遅くまでやっている銭湯も嬉しい。">Kyoto is best approached without a schedule. The market opens at 6am. The onsen closes late. Arashiyama is twelve minutes by Randen. Everything nearby is walkable, quiet, and rarely on a tour itinerary.</p>
+    </div>
+    <div style="background:var(--washi-warm);border:1px solid var(--border);border-left:3px solid var(--noren-lt);padding:32px;display:flex;flex-direction:column;gap:20px;">
+      <div data-jp="近隣のご案内" style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi);font-weight:300;">What the neighbourhood offers</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:14px;color:var(--sumi-mid);font-weight:300;display:flex;gap:12px;align-items:start;"><span style="color:var(--noren-lt);font-family:var(--f-display);">—</span><span data-jp="京都中央卸売市場 — 徒歩1分">Kyoto Central Market — 1 min on foot</span></div>
+        <div style="font-size:14px;color:var(--sumi-mid);font-weight:300;display:flex;gap:12px;align-items:start;"><span style="color:var(--noren-lt);font-family:var(--f-display);">—</span><span data-jp="近所の銭湯 — 徒歩1分">Neighbourhood onsen — 1 min on foot</span></div>
+        <div style="font-size:14px;color:var(--sumi-mid);font-weight:300;display:flex;gap:12px;align-items:start;"><span style="color:var(--noren-lt);font-family:var(--f-display);">—</span><span data-jp="嵐山 — 嵐電で12分">Arashiyama by Randen — 12 min</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- FILTER -->
+  <div style="padding:0 52px;border-bottom:1px solid var(--border);display:flex;gap:0;">
+    <button type="button" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;background:var(--sumi);color:var(--washi);border:none;cursor:pointer;border-right:1px solid rgba(242,238,231,.1);" data-jp="すべて">All</button>
+    <button type="button" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;background:transparent;color:var(--sumi);border:none;cursor:pointer;border-right:1px solid var(--border);" data-jp="芸術">Arts</button>
+    <button type="button" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;background:transparent;color:var(--sumi);border:none;cursor:pointer;border-right:1px solid var(--border);" data-jp="工芸">Craft</button>
+    <button type="button" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;background:transparent;color:var(--sumi);border:none;cursor:pointer;border-right:1px solid var(--border);" data-jp="食">Food</button>
+    <button type="button" style="padding:16px 28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;background:transparent;color:var(--sumi);border:none;cursor:pointer;" data-jp="文化">Culture</button>
+  </div>
+  <!-- EXPERIENCES GRID -->
+  <div style="padding:64px 52px;border-bottom:1px solid var(--border);">
+    <div class="g-2col g-gap-2 mb-2">
+      <div style="border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column;" onmouseover="this.style.boxShadow='0 8px 32px rgba(17,17,16,.1)'" onmouseout="this.style.boxShadow='none'">
+        <img src="images/exp-tea-ceremony.jpg" alt="Tea ceremony · Tatami room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div style="padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;">芸術</div>
+          <div style="font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--sumi);margin-bottom:6px;line-height:1.15;">茶の湯</div>
+          <div style="font-size:12px;color:var(--sumi-light);margin-bottom:16px;letter-spacing:.04em;font-weight:200;" data-jp="茶の湯 · 茶の世界">Cha-no-yu · Tea Ceremony</div>
+          <p data-jp="12年の修行を積んだ茶人が八畳の茶室でお迎えします。受け継がれてきた型と、季節によって変るお湯が、交わる場所です。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;flex:1;">Performed by a practitioner of twelve years' training. Sixty minutes in the eight-mat tea room. The form does not change with the season. The water does.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="60分">60 min</span><span class="chip chip-sumi" data-jp="2〜4名">2–4 guests</span></div>
+          <button type="button" class="btn btn-sumi" style="font-size:10px;padding:12px 24px;align-self:flex-start;" data-jp="体験を予約する" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+      <div style="border:1px solid var(--border);background:var(--washi-warm);overflow:hidden;transition:box-shadow .3s;display:flex;flex-direction:column;" onmouseover="this.style.boxShadow='0 8px 32px rgba(17,17,16,.1)'" onmouseout="this.style.boxShadow='none'">
+        <img src="images/exp-ikebana.jpg" alt="Ikebana · Cutting stems" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div style="padding:28px 28px 32px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--noren-lt);margin-bottom:10px;font-weight:300;">芸術</div>
+          <div style="font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--sumi);margin-bottom:6px;line-height:1.15;">生け花</div>
+          <div style="font-size:12px;color:var(--sumi-light);margin-bottom:16px;letter-spacing:.04em;font-weight:200;" data-jp="生け花 · 花のアート">Ikebana · Flower Arrangement</div>
+          <p data-jp="日本最古の流派、池坊流の生け花。季節の素材、季節の型。作ったものはお持ち帰り頂けます。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;flex:1;">Ikenobō school ikebana, the oldest continuous school of flower arrangement in Japan. Seasonal materials, seasonal forms. What you make is yours to take.</p>
+          <div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="45分">45 min</span><span class="chip chip-sumi" data-jp="2〜4名">2–4 guests</span></div>
+          <button type="button" class="btn btn-outline" style="font-size:10px;padding:12px 24px;align-self:flex-start;" data-jp="体験を予約する" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+    </div>
+    <div class="g-3col g-gap-2 mb-2">
+      <div class="news-card" style="background:var(--washi-warm);">
+        <img src="images/exp-shodo.jpg" alt="Shodo · Calligraphy" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body">
+          <div class="news-card-cat">芸術</div>
+          <div class="news-card-title" style="font-size:20px;">書道</div>
+          <p data-jp="筆と墨汁のみで、一文字に1時間。迷いを許さない筆は向き合う者に報いてくれます。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;flex:1;">Calligraphy with brush and sumi ink. One character, one hour. The brush does not forgive hesitation — but it rewards it differently than you expect.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-sumi" data-jp="60分">60 min</span></div>
+          <button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+      <div class="news-card" style="background:var(--washi-warm);">
+        <img src="images/exp-weaving.jpg" alt="Weaving workshop" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body">
+          <div class="news-card-cat">工芸</div>
+          <div class="news-card-title" style="font-size:20px;">織り</div>
+          <p data-jp="宿から10分歩いて12枚綜絖のジャガード機による西陣の機屋を見学できる貴重な体験です。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;flex:1;">A visit to a Nishijin weaver's studio, ten minutes from the house. The loom is a twelve-shaft Jacquard. The weaver will show you the diagonal that names this building.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-sumi" data-jp="90分">90 min</span></div>
+          <button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+      <div class="news-card" style="background:var(--washi-warm);">
+        <img src="images/exp-nishiki.jpg" alt="Nishiki Market morning tour" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body">
+          <div class="news-card-cat">食</div>
+          <div class="news-card-title" style="font-size:20px;">錦市場</div>
+          <p data-jp="11年間仕入れをしている料理人の案内で、ディープな早朝の錦市場を探検します。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;flex:1;">An early morning walk through Nishiki Market with our cook, who has been shopping here for eleven years. The purpose is not to buy — it is to learn what to notice.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-sumi" data-jp="75分">75 min</span><span class="chip chip-sumi" data-jp="午前のみ">Morning only</span></div>
+          <button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+    </div>
+    <div class="g-3col g-gap-2">
+      <div class="news-card" style="background:var(--washi-warm);">
+        <img src="images/exp-kodo.jpg" alt="Kodo · Incense" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body">
+          <div class="news-card-cat">文化</div>
+          <div class="news-card-title" style="font-size:20px;">香道</div>
+          <p data-jp="香を聞く芸術。灰と雲母の上で焚くアロースウッドと白檀。その香を語れるまでには年月を要します。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;flex:1;">The art of listening to incense. Aloeswood and sandalwood, burned on ash and mica. The vocabulary of scent takes years. We teach the first three words.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-sumi" data-jp="45分">45 min</span></div>
+          <button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+      <div class="news-card" style="background:var(--washi-warm);">
+        <img src="images/exp-garden-walk.jpg" alt="Private garden walk" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body">
+          <div class="news-card-cat">文化</div>
+          <div class="news-card-title" style="font-size:20px;">庭園</div>
+          <p data-jp="島原に残るプライベートガーデン3軒を巡るガイド付きウォーク。主が見学を受け入れるのはこのツアーの参加者だけです。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;flex:1;">A guided walk through Shimabara's remaining private gardens — three properties whose owners do not receive visitors. We are an exception, not a right.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-sumi" data-jp="2時間">2 hrs</span></div>
+          <button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(5)">View Experience →</button>
+        </div>
+      </div>
+      <div class="news-card" style="background:var(--stone);border:1px solid var(--border);">
+        <img src="images/exp-ozashiki.jpg" alt="Ozashiki · Sumiya" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="news-card-body" style="background:var(--stone);">
+          <div style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--urushi);margin-bottom:10px;font-weight:300;" data-jp="文化・特別">特別</div>
+          <div style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);line-height:1.3;margin-bottom:10px;flex:1;">お座敷</div>
+          <p data-jp="住吉屋お茶屋——島原に残る最後の完全なお座敷でのプライベートな夕べ。月4回開催。ご希望の方はご相談ください。" style="font-size:13px;color:var(--sumi-mid);font-weight:300;line-height:1.8;margin-bottom:16px;">A private evening at Sumiya Ochaya — the last intact ozashiki house in Shimabara. Available four evenings per month. Ask us at time of booking.</p>
+          <div class="chip-row" style="margin-bottom:16px;"><span class="chip chip-urushi" data-jp="要相談">By arrangement</span></div>
+          <button type="button" class="btn" style="background:var(--urushi);color:var(--washi);border:none;padding:12px 24px;font-weight:500;">Enquire →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ════ 全室共通設備 ════ -->
   <!-- Common amenities note -->
   <div style="border:1px solid var(--border);background:var(--washi-warm);padding:32px 40px;margin-top:8px;">
     <span class="kicker" data-jp="— 全室共通設備" style="margin-bottom:12px;">— All Rooms Include</span>
