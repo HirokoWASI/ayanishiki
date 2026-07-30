@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>綾錦 Ayanishiki — Shimabara, Kyoto [v2 修正版]</title>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;1,6..96,300;1,6..96,400&family=Barlow:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@200;300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;700&family=Barlow:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&family=Noto+Sans+JP:wght@200;300&display=swap" rel="stylesheet">
 <style>
-:root{--washi:#F2EEE7;--washi-warm:#EDE8DF;--stone:#DDD7CE;--ash:#C4BDB4;--sumi:#111110;--sumi-soft:#1E1D1A;--sumi-panel:#252320;--sumi-mid:#3F3D39;--sumi-light:#6B6762;--urushi:#C13920;--urushi-hover:#A12D18;--noren:#2A4A3E;--noren-lt:#3D6B5A;--border:rgba(17,17,16,0.10);--border-lt:rgba(17,17,16,0.06);--border-dk:rgba(242,238,231,0.09);--f-display:'Bodoni Moda','Noto Serif JP',serif;--f-ui:'Barlow','Noto Sans JP',sans-serif;}
+:root{--washi:#F2EEE7;--washi-warm:#EDE8DF;--stone:#C7C6C4;--ash:#C4BDB4;--sumi:#111110;--sumi-soft:#1E1D1A;--sumi-panel:#252320;--sumi-mid:#3F3D39;--sumi-light:#6B6762;--urushi:#111110;--urushi-hover:#1E1D1A;--noren:#2A4A3E;--noren-lt:#3D6B5A;--border:rgba(17,17,16,0.10);--border-lt:rgba(17,17,16,0.06);--border-dk:rgba(242,238,231,0.09);--f-display:'Cormorant Garamond','Shippori Mincho',serif;--f-ui:'Barlow','Noto Sans JP',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:var(--f-ui);font-weight:300;font-size:15px;line-height:1.7;background:var(--washi);color:var(--sumi);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
@@ -16,7 +16,7 @@ a{text-decoration:none;color:inherit;}
 .tab-bar{display:none;}
 .tab-bar::-webkit-scrollbar{display:none;}
 .tab-btn{padding:10px 16px;font-family:var(--f-ui);font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sumi-mid);background:transparent;border:none;border-right:1px solid var(--border);white-space:nowrap;cursor:pointer;line-height:1.4;text-align:left;transition:color .2s;}
-.tab-btn span{display:block;font-size:8px;color:var(--sumi-light);margin-top:2px;letter-spacing:.1em;font-family:'Noto Serif JP',serif;font-weight:300;}
+.tab-btn span{display:block;font-size:8px;color:var(--sumi-light);margin-top:2px;letter-spacing:.1em;font-family:'Shippori Mincho',serif;font-weight:300;}
 .tab-btn:hover{color:var(--sumi);}
 .tab-btn.active{background:var(--washi);color:var(--sumi);border-bottom:2px solid var(--urushi);margin-bottom:-2px;}
 .tab-btn.active span{color:var(--sumi-light);}
@@ -42,6 +42,10 @@ a{text-decoration:none;color:inherit;}
 .btn-outline:hover{background:var(--sumi);color:var(--washi);}
 .btn-outline-lt{background:rgba(0,0,0,.25);color:rgba(242,238,231,.95);border:1px solid rgba(242,238,231,.7);backdrop-filter:blur(4px);font-weight:700;}
 .btn-outline-lt:hover{border-color:rgba(242,238,231,.6);color:rgba(242,238,231,.95);}
+.btn-text-link{background:none;border:none;padding:2px 0;font-family:var(--f-ui);font-size:12px;letter-spacing:.04em;text-transform:none;font-weight:400;color:var(--sumi-mid);text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left;display:inline-block;}
+.btn-text-link:hover{color:var(--sumi);}
+/* MOBILE STICKY RESERVE BAR — room detail pages only, hidden on desktop */
+.mobile-reserve-bar{display:none;}
 /* IMAGE PH */
 .img-ph{background:var(--stone);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--sumi-light);font-size:9px;letter-spacing:.15em;text-transform:uppercase;font-family:var(--f-ui);font-weight:300;position:relative;}
 .img-ph.dark{background:var(--ash);border-color:transparent;}
@@ -64,7 +68,7 @@ a{text-decoration:none;color:inherit;}
 .site-footer{background:var(--stone);padding:72px 52px 40px;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:48px;}
 .ft-brand{font-family:var(--f-display);font-size:24px;font-weight:300;color:var(--sumi);margin-bottom:8px;}
 /* 修正#8: 綾錦フォントサイズ2倍・色黒 */
-.ft-brand-jp{font-family:'Noto Serif JP',serif;font-size:96px;font-weight:400;color:#111110;letter-spacing:.18em;display:block;margin-bottom:16px;}
+.ft-brand-jp{font-family:'Shippori Mincho',serif;font-size:96px;font-weight:400;color:#111110;letter-spacing:.18em;display:block;margin-bottom:16px;}
 .ft-tagline{font-size:13px;font-weight:300;color:var(--sumi-mid);line-height:1.9;max-width:240px;}
 .ft-col-title{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:300;color:var(--sumi-light);margin-bottom:20px;}
 .ft-links{display:flex;flex-direction:column;gap:12px;}
@@ -329,6 +333,13 @@ body { word-break:break-word; overflow-wrap:break-word; }
 
   /* Spec bar */
   .spec-bar { flex-wrap:wrap; }
+
+  /* Mobile sticky reserve bar (room detail pages) */
+  .mobile-reserve-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;align-items:center;gap:12px;padding:12px 16px;background:var(--washi);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(17,17,16,.1);}
+  .mobile-reserve-bar .mrb-price{flex:1;font-size:10px;letter-spacing:.08em;color:var(--sumi-light);text-transform:uppercase;line-height:1.5;}
+  .mobile-reserve-bar .mrb-price strong{display:block;font-family:var(--f-display);font-style:italic;font-size:19px;font-weight:300;letter-spacing:0;text-transform:none;color:var(--sumi);}
+  .mobile-reserve-bar .btn-book{padding:12px 22px;font-size:11px;flex-shrink:0;}
+  .site-footer.has-sticky-reserve{padding-bottom:88px;}
 }
 
 /* ── SMALL MOBILE 480px ── */
@@ -538,9 +549,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <button type="button" class="btn btn-outline" style="margin-bottom:4px;" data-jp="全客室を見る →" onclick="goPage(2)">View All Rooms →</button>
   </div>
   <div class="g-3col g-gap-2">
-    <div class="room-card"><img src="images/room-detached.jpg" alt="テラス付ツインルーム · 1F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1階 · 40㎡ · 1〜5名様</div><div class="room-card-title">テラス付ツインルーム</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span></div><button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(3)">View Room</button></div></div>
-    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 25㎡ · 1〜4名様</div><div class="room-card-title">西の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(3)">View Room</button></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 21㎡ · 1〜4名様</div><div class="room-card-title">東の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><button type="button" class="btn btn-outline" style="padding:11px 22px;" onclick="goPage(3)">View Room</button></div></div>
+    <div class="room-card"><img src="images/room-detached.jpg" alt="テラス付ツインルーム · 1F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1階 · 40㎡ · 1〜5名様</div><div class="room-card-title">テラス付ツインルーム</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 25㎡ · 1〜4名様</div><div class="room-card-title">西の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 21㎡ · 1〜4名様</div><div class="room-card-title">東の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
   </div>
 </div>
 <!-- EXPERIENCE TEASER -->
@@ -738,15 +749,23 @@ body { word-break:break-word; overflow-wrap:break-word; }
       <div style="font-size:12px;color:var(--sumi-mid);margin-bottom:20px;letter-spacing:.04em;font-weight:300;">1階客室</div>
       <p data-jp="三室の中でもっとも広く5名まで宿泊可能。竹を敷き詰めたテラスに向いた信楽焼の浴槽。ミニキッチンは長滞在にも便利。大切なペット（大型犬も可）もご一緒に。" style="font-size:14px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:24px;">The largest of our three rooms, at 40㎡. A Shigaraki ceramic bath opens to a private bamboo terrace. Mini kitchen for long stays. The only room that accommodates five — and the one that welcomes your dog.</p>
       <div class="chip-row" style="margin-bottom:28px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span><span class="chip chip-sumi" data-jp="ペット歓迎">Pet Welcome</span></div>
-      <div style="display:flex;gap:12px;align-items:stretch;"><button type="button" class="btn btn-sumi" style="padding:12px 24px;" onclick="goPage(3)">View Room</button><button type="button" class="btn-book" onclick="goPage(12)">Reserve →</button></div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div>
     </div>
   </div>
   <!-- 修正#17: 2F客室説明変更（画像参照） -->
   <!-- 2-col grid -->
   <div class="g-2col g-gap-2 mb-2">
     <!-- 再修正#17: eyebrow区切り変更、説明文修正、チップ黒字、ボタン黒背景+予約ボタン追加 -->
-    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;gap:8px;"><button type="button" class="btn btn-sumi" style="padding:11px 22px;" onclick="goPage(3)">部屋を見る</button><button type="button" class="btn-book" onclick="goPage(12)">予約する →</button></div></div></div>
+    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+  </div>
+  <!-- GOOGLE口コミ（静的表示・評価は仮の数値、URLは仮） -->
+  <div style="margin-top:32px;padding:28px 32px;border:1px solid var(--border);background:var(--washi-warm);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="font-family:var(--f-display);font-style:italic;font-size:26px;font-weight:300;color:var(--sumi);">★4.6</span>
+      <span style="font-size:12px;color:var(--sumi-mid);font-weight:300;" data-jp="Googleでの口コミ評価（仮の数値）">Guest rating on Google (provisional)</span>
+    </div>
+    <a href="#" class="btn btn-outline" style="padding:11px 22px;" target="_blank" rel="noopener" data-jp="Googleで口コミを見る">Read Reviews on Google →</a>
   </div>
   <!-- ════ コンセプトコンテンツ（p1より統合） ════ -->
   <div style="height:480px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:var(--washi);">
@@ -1127,19 +1146,24 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;" data-jp="他の客室">Other Rooms</div>
       <div style="display:flex;flex-direction:column;gap:0;">
-        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">西の部屋 — 2F West Room <span style="color:var(--sumi-light);">→</span></a>
-        <a href="#" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">東の部屋 — 2F East Room <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">西の部屋 — 2F West Room <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">東の部屋 — 2F East Room <span style="color:var(--sumi-light);">→</span></a>
       </div>
     </div>
   </div>
 </div>
-<footer class="site-footer">
+<footer class="site-footer has-sticky-reserve">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
   <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a><a href="#" onclick="goPage(4);return false;" data-jp="体験" >Experiences</a></div></div>
   <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" onclick="goPage(12);return false;" data-jp="ご予約">Reservations</a><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
+<!-- MOBILE STICKY RESERVE BAR (mobile only; price is provisional pending official rate) -->
+<div class="mobile-reserve-bar">
+  <div class="mrb-price"><span data-jp="1泊あたり">Per Night</span><strong>¥32,000〜</strong></div>
+  <button type="button" class="btn-book" onclick="goPage(12)">Reserve Now</button>
+</div>
 </div>
 
 <!-- ════ 05 EXPERIENCE COLLECTION ════ -->
@@ -1871,7 +1895,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <div style="border:1px solid var(--border);padding:20px 24px;background:var(--washi-warm);">
     <div style="font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:10px;font-weight:300;" data-jp="住所">Address</div>
     <!-- 修正#41/#50: 住所・連絡先変更（画像参照） -->
-    <div style="font-family:'Noto Serif JP',serif;font-size:14px;color:var(--sumi);line-height:1.9;letter-spacing:.04em;">〒600-8816<br>京都府京都市下京区西新屋敷中堂寺町58-5<br>電話：075-741-7622（午前9:00〜午後5:00）<br>　3ヶ国語対応(日本語、英語、中国語)<br>E-mail：stay@ayanishiki.jp</div>
+    <div style="font-family:'Shippori Mincho',serif;font-size:14px;color:var(--sumi);line-height:1.9;letter-spacing:.04em;">〒600-8816<br>京都府京都市下京区西新屋敷中堂寺町58-5<br>電話：075-741-7622（午前9:00〜午後5:00）<br>　3ヶ国語対応(日本語、英語、中国語)<br>E-mail：stay@ayanishiki.jp</div>
   </div>
 </div>
 <!-- MAP + ROUTES -->
@@ -1987,13 +2011,13 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <span class="bc-sep" aria-hidden="true">›</span>
   <span style="font-size:9px;letter-spacing:.12em;color:var(--sumi);font-weight:300;" data-jp="1棟貸し">Whole-House Rental</span>
 </div>
-<!-- HERO -->
-<div style="height:520px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:url('images/hero-room-detail.jpg') center/cover no-repeat;">
-  <span style="opacity:.12;font-size:11px;letter-spacing:.2em;">Photo · Exterior · Ayanishiki whole house</span>
+<!-- HERO — 写真プレースホルダー（Dogs写真 選定待ち） -->
+<div class="img-ph dark" style="height:520px;border-bottom:1px solid rgba(242,238,231,.08);">
+  <span style="font-size:10px;letter-spacing:.2em;">Photo · Exterior · Dogs (選定待ち / coming soon)</span>
   <div style="position:absolute;bottom:60px;left:52px;">
-    <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(242,238,231,.55);display:block;margin-bottom:16px;font-weight:300;">— 1棟貸し</span>
-    <h1 style="font-family:var(--f-display);font-size:clamp(36px,4.5vw,64px);font-weight:300;color:rgba(242,238,231,.9);line-height:1;margin-bottom:12px;">京に住まう。静けさの贅沢</h1>
-    <p data-jp="京に住まう。島原に暮らすように過ごしてみませんか。" style="font-family:var(--f-display);font-style:italic;font-size:20px;font-weight:300;color:rgba(242,238,231,.7);">Live in Kyoto. Stay as if you belong in Shimabara.</p>
+    <span style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--sumi-light);display:block;margin-bottom:16px;font-weight:300;">— 1棟貸し</span>
+    <h1 style="font-family:var(--f-display);font-size:clamp(36px,4.5vw,64px);font-weight:300;color:var(--sumi);line-height:1;margin-bottom:12px;">京に住まう。静けさの贅沢</h1>
+    <p data-jp="京に住まう。島原に暮らすように過ごしてみませんか。" style="font-family:var(--f-display);font-style:italic;font-size:20px;font-weight:300;color:var(--sumi-mid);">Live in Kyoto. Stay as if you belong in Shimabara.</p>
   </div>
 </div>
 <!-- CONTENT -->
@@ -2008,22 +2032,25 @@ body { word-break:break-word; overflow-wrap:break-word; }
       <span class="chip chip-sumi" data-jp="最大13名">Up to 13 guests</span>
       <span class="chip chip-noren" data-jp="ペット歓迎">Pet Welcome</span>
     </div>
-    <!-- 3 ROOM PHOTOS -->
+    <!-- 3 ROOM PHOTOS — Dogs写真 選定待ちのためプレースホルダー -->
     <div class="g-3col g-gap-2" style="margin-bottom:40px;">
       <div>
-        <img src="images/room-plum.jpg" alt="テラス付ツインルーム · 1F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="img-ph" style="aspect-ratio:4/3;width:100%;"><span>Photo · Dogs (選定待ち)</span></div>
         <div style="padding:12px 0;font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);">テラス付ツインルーム</div>
-        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;">1階 · 40㎡ · 1〜5名様</div>
+        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;margin-bottom:10px;">1階 · 40㎡ · 1〜5名様</div>
+        <button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button>
       </div>
       <div>
-        <img src="images/room-west.jpg" alt="西の部屋 · 2F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="img-ph" style="aspect-ratio:4/3;width:100%;"><span>Photo · West Room</span></div>
         <div style="padding:12px 0;font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);">西の部屋</div>
-        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;">2階 · 25㎡ · 1〜4名様</div>
+        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;margin-bottom:10px;">2階 · 25㎡ · 1〜4名様</div>
+        <button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button>
       </div>
       <div>
-        <img src="images/room-pine.jpg" alt="東の部屋 · 2F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;">
+        <div class="img-ph" style="aspect-ratio:4/3;width:100%;"><span>Photo · Dogs (選定待ち)</span></div>
         <div style="padding:12px 0;font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);">東の部屋</div>
-        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;">2階 · 21㎡ · 1〜4名様</div>
+        <div style="font-size:11px;color:var(--sumi-light);font-weight:200;margin-bottom:10px;">2階 · 21㎡ · 1〜4名様</div>
+        <button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button>
       </div>
     </div>
     <div style="display:flex;gap:12px;">
@@ -2055,6 +2082,12 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
   </div>
+</div>
+<!-- FINAL CTA — 予約（ページ末尾） -->
+<div style="background:var(--sumi);padding:80px 52px;text-align:center;border-bottom:1px solid var(--border-dk);">
+  <span class="kicker" style="color:rgba(242,238,231,.5);" data-jp="— ご予約">— Reservations</span>
+  <h2 class="section-title lt" style="font-size:32px;margin-bottom:32px;" data-jp="京の一棟貸し、<em>ご予約はお早めに。</em>">Reserve the <em>whole house.</em></h2>
+  <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:12px;padding:16px 40px;" onclick="goPage(12)">Reserve Now</button>
 </div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
@@ -2145,13 +2178,18 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
-<footer class="site-footer">
+<footer class="site-footer has-sticky-reserve">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
   <div><div class="ft-col-title" data-jp="探す">Explore</div><div class="ft-links"><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></div></div>
   <div><div class="ft-col-title" data-jp="お問い合わせ">Contact</div><div class="ft-links"><a href="#" onclick="goPage(12);return false;" data-jp="ご予約">Reservations</a><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></div></div>
   <div class="ft-bottom"><div class="ft-copy">© 2025 Ayanishiki · 綾錦.</div><div class="ft-socials"><a class="ft-soc" href="#" aria-label="Instagram">IG</a><a class="ft-soc" href="#" aria-label="Facebook">FB</a></div></div>
 </footer>
+<!-- MOBILE STICKY RESERVE BAR (mobile only; price is provisional pending official rate) -->
+<div class="mobile-reserve-bar">
+  <div class="mrb-price"><span data-jp="1泊あたり">Per Night</span><strong>¥24,000〜</strong></div>
+  <button type="button" class="btn-book" onclick="goPage(12)">Reserve Now</button>
+</div>
 </div>
 
 </div><!-- /pages-container -->
@@ -2179,6 +2217,7 @@ const BTN_TRANSLATIONS = {
   'X · Twitter': 'X · Twitter',
   'Check Availability': '空室を確認する',
   'Reserve This Room': 'この部屋を予約する',
+  'View Details': '詳細を見る',
   'Reserve Now': '今すぐ予約',
   'View Facility →': '施設を見る →',
   'Contact Us': 'お問い合わせ',
@@ -2335,7 +2374,7 @@ function areaFilter(btn,cat){
 // Handle broken images: show placeholder background instead of broken icon
 document.querySelectorAll('img').forEach(function(img) {
   function applyPlaceholder() {
-    img.style.background = 'var(--stone,#DDD7CE)';
+    img.style.background = 'var(--stone,#C7C6C4)';
     img.style.minHeight = img.style.minHeight || '120px';
     img.style.display = 'block';
     img.setAttribute('alt', '');
