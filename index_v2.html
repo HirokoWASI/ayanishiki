@@ -9,7 +9,7 @@
 :root{--washi:#F2EEE7;--washi-warm:#EDE8DF;--stone:#C7C6C4;--ash:#C4BDB4;--sumi:#111110;--sumi-soft:#1E1D1A;--sumi-panel:#252320;--sumi-mid:#3F3D39;--sumi-light:#6B6762;--urushi:#111110;--urushi-hover:#1E1D1A;--noren:#2A4A3E;--noren-lt:#3D6B5A;--border:rgba(17,17,16,0.10);--border-lt:rgba(17,17,16,0.06);--border-dk:rgba(242,238,231,0.09);--f-display:'Cormorant Garamond','Shippori Mincho',serif;--f-ui:'Barlow','Noto Sans JP',sans-serif;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--f-ui);font-weight:300;font-size:15px;line-height:1.7;background:var(--washi);color:var(--sumi);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body{font-family:var(--f-ui);font-weight:300;font-size:15px;line-height:1.7;background:var(--washi);color:var(--sumi);-webkit-font-smoothing:antialiased;overflow-x:hidden;font-variant-numeric:lining-nums;}
 a{text-decoration:none;color:inherit;}
 ::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--washi);}::-webkit-scrollbar-thumb{background:var(--ash);}
 .shell{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
@@ -32,7 +32,7 @@ a{text-decoration:none;color:inherit;}
 .nav-links a:hover,.nav-links a.active{color:var(--sumi);}
 .nav-right{display:flex;align-items:center;gap:16px;}
 .nav-lang{font-size:13px;letter-spacing:.14em;color:var(--sumi-light);font-weight:300;}
-.btn-book{font-family:var(--f-ui);font-size:16px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:13px 28px;background:var(--urushi);color:var(--washi);border:none;cursor:pointer;transition:all .25s;box-shadow:0 2px 16px rgba(193,57,32,.35);}
+.btn-book{font-family:var(--f-ui);font-size:16px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:13px 28px;background:var(--urushi);color:var(--washi);border:none;cursor:pointer;transition:all .25s;box-shadow:0 2px 16px rgba(193,57,32,.35);white-space:nowrap;flex-shrink:0;}
 .btn-book:hover{background:var(--urushi-hover);}
 /* BUTTONS */
 .btn{font-family:var(--f-ui);font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:13px 28px;cursor:pointer;display:inline-block;transition:all .25s;}
@@ -109,7 +109,7 @@ a{text-decoration:none;color:inherit;}
 .route-item{padding:20px 0;border-bottom:1px solid var(--border);}
 .route-item:last-child{border-bottom:none;}
 .route-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
-.route-name{font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--sumi);}
+.route-name{font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--sumi);}
 .route-time{font-size:12px;color:var(--sumi-light);letter-spacing:.06em;font-weight:200;}
 .route-desc{font-size:13px;color:var(--sumi-mid);line-height:1.8;font-weight:300;}
 /* PULL QUOTE */
@@ -163,8 +163,9 @@ button:focus-visible, a:focus-visible {
 .accordion-q { width: 100%; text-align: left; background: none; border: none; padding: 22px 0; cursor: pointer; }
 /* Chip text on washi — noren-lt passes, but ensure sumi chip passes */
 .chip-sumi { border: 1px solid var(--border); color: var(--sumi-mid); }
-/* ft-links — was rgba .4 which is ~4.5x on sumi bg, good. ft-col-title was .25 — bump */
-.ft-col-title { color: rgba(242,238,231,.55); }
+/* ft-links — was rgba .4 which is ~4.5x on sumi bg, good. */
+/* ft-col-title sits on the light --stone footer bg, not a dark bg — the previous near-white rgba(242,238,231,.55) was unreadable. Use dark, bold, +2pt. */
+.ft-col-title { color: var(--sumi); font-weight: 700; font-size: 13px; }
 /* room-card-meta was not defined explicitly — use sumi-mid */
 /* sumi-light on stone bg fails (2.58x) — wherever sumi-light appears on stone, use sumi-mid */
 /* Touch target minimum for small icon buttons */
@@ -337,7 +338,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   /* Mobile sticky reserve bar (room detail pages) */
   .mobile-reserve-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;align-items:center;gap:12px;padding:12px 16px;background:var(--washi);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(17,17,16,.1);}
   .mobile-reserve-bar .mrb-price{flex:1;font-size:10px;letter-spacing:.08em;color:var(--sumi-light);text-transform:uppercase;line-height:1.5;}
-  .mobile-reserve-bar .mrb-price strong{display:block;font-family:var(--f-display);font-style:italic;font-size:19px;font-weight:300;letter-spacing:0;text-transform:none;color:var(--sumi);}
+  .mobile-reserve-bar .mrb-price strong{display:block;font-family:var(--f-display);font-style:italic;font-size:19px;font-weight:300;line-height:1.2;letter-spacing:0;text-transform:none;color:var(--sumi);}
   .mobile-reserve-bar .btn-book{padding:12px 22px;font-size:11px;flex-shrink:0;}
   .site-footer.has-sticky-reserve{padding-bottom:88px;}
 }
@@ -503,7 +504,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   </button>
   <!-- 削除予定メニュー識別マーク追加 -->
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" class="active" aria-current="page" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button><!-- 修正#2/#40/#47: 言語ボタン「英語」→「EN」 --> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button><!-- 修正#2/#40/#47: 言語ボタン「英語」→「EN」 --> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- HERO -->
 <div style="height:100vh;min-height:600px;max-height:780px;position:relative;overflow:hidden;border-bottom:1px solid rgba(242,238,231,.08);background:url('images/hero-main.jpg') center/cover no-repeat;">
@@ -516,7 +517,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <p data-jp="京都最古の花街を、三室で味わう。歴史深いこの街で、静かに、ゆっくりと過ごす" style="font-size:15px;font-weight:300;color:rgba(242,238,231,.92);max-width:440px;line-height:1.9;margin-bottom:36px;">Kyoto's oldest licensed quarter, savored as three rooms. A place of deep history — arrived at quietly, experienced slowly.</p>
     <div class="avail-badge" style="margin-bottom:18px;"><span class="avail-dot"></span><span data-jp="本日空室あり">Rooms available tonight</span></div>
     <div style="display:flex;gap:12px;">
-      <button type="button" class="btn-book" style="padding:15px 36px;font-size:12px;letter-spacing:.16em;font-weight:600;">Reserve a Room · 予約</button>
+      <button type="button" class="btn-book" style="padding:15px 36px;font-size:12px;letter-spacing:.16em;font-weight:600;" data-jp="予約する">Reservation</button>
       <button type="button" class="btn btn-outline-lt" style="padding:14px 28px;" onclick="document.getElementById('p0').scrollBy({top:600,behavior:'smooth'})">Explore ↓</button>
     </div>
   </div>
@@ -549,9 +550,12 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <button type="button" class="btn btn-outline" style="margin-bottom:4px;" data-jp="全客室を見る →" onclick="goPage(2)">View All Rooms →</button>
   </div>
   <div class="g-3col g-gap-2">
-    <div class="room-card"><img src="images/room-detached.jpg" alt="テラス付ツインルーム · 1F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1階 · 40㎡ · 1〜5名様</div><div class="room-card-title">テラス付ツインルーム</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div></div></div>
-    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 25㎡ · 1〜4名様</div><div class="room-card-title">西の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 21㎡ · 1〜4名様</div><div class="room-card-title">東の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-detached.jpg" alt="テラス付ツインルーム · 1F" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">1階 · 40㎡ · 1〜5名様</div><div class="room-card-title">テラス付ツインルーム</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 25㎡ · 1〜4名様</div><div class="room-card-title">西の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-noren" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 · 21㎡ · 1〜4名様</div><div class="room-card-title">東の部屋</div><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:36px;">
+    <button type="button" class="btn btn-outline" onclick="goPage(13)">一棟貸しについて</button>
   </div>
 </div>
 <!-- EXPERIENCE TEASER -->
@@ -596,6 +600,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="news-card"><img src="images/article-nishiki.jpg" alt="Nishiki market morning" style="aspect-ratio:16/9;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Dining · 食</div><div class="news-card-title" data-jp="錦の朝：市場が混む前に食べるべきもの">A morning in Nishiki: what to eat before the market fills</div><div class="news-card-date" data-jp="2025年1月 · 読了3分">January 2025 · 3 min read</div><button type="button" class="btn btn-outline" style="padding:9px 18px;font-size:10px;margin-top:auto;" data-jp="記事を読む →" onclick="goPage(10)">Read Article →</button></div></div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a><a href="#" onclick="goPage(2);return false;" data-jp="料金">Rates</a></div></div>
@@ -613,7 +618,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" class="active" aria-current="page" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="height:480px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:var(--washi);">
   <span style="opacity:.12;font-size:11px;letter-spacing:.2em;">Photo · Interior · Corridor — morning light</span>
@@ -683,23 +688,24 @@ body { word-break:break-word; overflow-wrap:break-word; }
   <h2 class="section-title" data-jp="ここに在ることの意味" style="margin-bottom:56px;">The <em>address</em> in time.</h2>
   <div style="display:flex;flex-direction:column;">
     <div class="g-timeline">
-      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--sumi);text-align:right;padding-top:4px;">1640</div>
+      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--sumi);text-align:right;padding-top:4px;">1640</div>
       <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--sumi);background:var(--washi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
       <div style="padding-top:4px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;" data-jp="島原が公式花街に">Shimabara designated</div><p data-jp="認定。現在の住所と建物の境界が定められる。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">The Tokugawa shogunate legally establishes Shimabara as Kyoto's designated quarter. Its boundaries, and the address of this building, are fixed.</p></div>
     </div>
     <div class="g-timeline">
       <!-- 再修正#14: 1880年代に white-space:nowrap 追加（折り返し防止） -->
-      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--sumi);text-align:right;padding-top:4px;white-space:nowrap;">1880年代</div>
+      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--sumi);text-align:right;padding-top:4px;white-space:nowrap;">1880年代</div>
       <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--sumi);background:var(--washi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
       <div style="padding-top:4px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;" data-jp="町家の建築">Machiya constructed</div><p data-jp="島原の古典的な様式と間取りに忠実な町家（現在の建物）が建てられる。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">The current building is constructed in the Meiji period — a machiya whose proportions faithfully follow the classical Shimabara typology.</p></div>
     </div>
     <div class="g-timeline">
-      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--urushi);text-align:right;padding-top:4px;">2023</div>
+      <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--urushi);text-align:right;padding-top:4px;">2023</div>
       <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--urushi);background:var(--urushi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
       <div style="padding-top:4px;"><div data-jp="綾錦オープン" style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;color:var(--urushi);">Ayanishiki opens</div><p data-jp="3年間の改修を経て、今も変わらぬ島原、大門の地に三室の宿として開業。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">After three years of careful restoration, the house opens as a three-room inn. The Ōmon gate remains. The street outside is still Shimabara.</p></div>
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -717,7 +723,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" class="active" aria-current="page" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="height:360px;position:relative;border-bottom:1px solid var(--border);background:var(--washi);">
   <div style="position:absolute;bottom:52px;left:52px;">
@@ -729,13 +735,16 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- 再修正#15: ラベル変更・値の区切り記号〜・黒字・階の表記変更 -->
 <!-- SPEC BAR -->
 <div class="spec-bar">
-  <div style="display:flex;flex-direction:column;gap:4px;"><span data-jp="客室数" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-mid);font-weight:400;">Rooms</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);">3</span></div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:center;"><span data-jp="客室数" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-mid);font-weight:400;">Rooms</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;line-height:1;color:var(--sumi);">3</span></div>
   <div style="width:1px;background:var(--border);"></div>
-  <div style="display:flex;flex-direction:column;gap:4px;"><span data-jp="部屋の広さ" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi);font-weight:400;">Size Range</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);">21〜40㎡</span></div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:center;"><span data-jp="部屋の広さ" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi);font-weight:400;">Size Range</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;line-height:1;color:var(--sumi);">21ー40㎡</span></div>
   <div style="width:1px;background:var(--border);"></div>
-  <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-mid);font-weight:400;" data-jp="客室階">Floor</span><span data-jp="1階及び2階" style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);">1F &amp; 2F</span></div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:center;"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi-mid);font-weight:400;" data-jp="客室階">Floor</span><span data-jp="1階及び2階" style="font-family:var(--f-display);font-size:20px;font-weight:300;line-height:1;color:var(--sumi);">1F &amp; 2F</span></div>
   <div style="width:1px;background:var(--border);"></div>
-  <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi);font-weight:400;" data-jp="1室あたりの人数">Max Guests</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;color:var(--sumi);">1〜5名様</span></div>
+  <div style="display:flex;flex-direction:column;gap:4px;text-align:center;"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sumi);font-weight:400;" data-jp="1室あたりの人数">Max Guests</span><span style="font-family:var(--f-display);font-size:20px;font-weight:300;line-height:1;color:var(--sumi);">1ー5名様</span></div>
+</div>
+<div style="text-align:center;padding:24px 52px;border-bottom:1px solid var(--border);">
+  <button type="button" class="btn btn-outline" onclick="goPage(13)">一棟貸しについて</button>
 </div>
 <!-- ROOMS -->
 <div style="padding:64px 52px;display:flex;flex-direction:column;gap:2px;border-bottom:1px solid var(--border);">
@@ -749,20 +758,20 @@ body { word-break:break-word; overflow-wrap:break-word; }
       <div style="font-size:12px;color:var(--sumi-mid);margin-bottom:20px;letter-spacing:.04em;font-weight:300;">1階客室</div>
       <p data-jp="三室の中でもっとも広く5名まで宿泊可能。竹を敷き詰めたテラスに向いた信楽焼の浴槽。ミニキッチンは長滞在にも便利。大切なペット（大型犬も可）もご一緒に。" style="font-size:14px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:24px;">The largest of our three rooms, at 40㎡. A Shigaraki ceramic bath opens to a private bamboo terrace. Mini kitchen for long stays. The only room that accommodates five — and the one that welcomes your dog.</p>
       <div class="chip-row" style="margin-bottom:28px;"><span class="chip chip-noren" data-jp="信楽風呂">Shigaraki Bath</span><span class="chip chip-sumi" data-jp="竹テラス">Bamboo Terrace</span><span class="chip chip-sumi" data-jp="ミニキッチン">Mini Kitchen</span><span class="chip chip-sumi" data-jp="ペット歓迎">Pet Welcome</span></div>
-      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(3)">View Details</button></div>
     </div>
   </div>
   <!-- 修正#17: 2F客室説明変更（画像参照） -->
   <!-- 2-col grid -->
   <div class="g-2col g-gap-2 mb-2">
     <!-- 再修正#17: eyebrow区切り変更、説明文修正、チップ黒字、ボタン黒背景+予約ボタン追加 -->
-    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
-    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)">Reserve This Room</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-west.jpg" alt="西の部屋 · 2F West Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 25㎡ − 1〜4名様</div><div class="room-card-title">西の部屋</div><p data-jp="季節を感じる床の間を設えた茶室テイストの、縁と繁栄をもたらす方角とされる西向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Tea room theme with seasonal tokonoma alcove. West-facing — associated in tradition with good fortune in relationships and prosperity.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="床の間">Tokonoma</span><span class="chip chip-sumi" data-jp="茶室テーマ">Tea Room Theme</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
+    <div class="room-card"><img src="images/room-pine.jpg" alt="東の部屋 · 2F East Room" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="room-card-body"><div class="room-card-eyebrow">2階 − 21㎡ − 1〜4名様</div><div class="room-card-title">東の部屋</div><p data-jp="朝日が差し込む静謐さが心地よい、健康運と仕事運に縁起の良い東向きの部屋。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;margin-bottom:20px;">Morning sun from the east. Clean direct layout. East-facing — traditionally associated with health and professional good fortune.</p><div class="chip-row" style="margin-bottom:20px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;"><button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button><button type="button" class="btn-text-link" onclick="goPage(14)">View Details</button></div></div></div>
   </div>
   <!-- GOOGLE口コミ（静的表示・評価は仮の数値、URLは仮） -->
   <div style="margin-top:32px;padding:28px 32px;border:1px solid var(--border);background:var(--washi-warm);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
     <div style="display:flex;align-items:center;gap:14px;">
-      <span style="font-family:var(--f-display);font-style:italic;font-size:26px;font-weight:300;color:var(--sumi);">★4.6</span>
+      <span style="font-family:var(--f-display);font-style:italic;font-size:26px;font-weight:300;line-height:1;color:var(--sumi);">★4.6</span>
       <span style="font-size:12px;color:var(--sumi-mid);font-weight:300;" data-jp="Googleでの口コミ評価（仮の数値）">Guest rating on Google (provisional)</span>
     </div>
     <a href="#" class="btn btn-outline" style="padding:11px 22px;" target="_blank" rel="noopener" data-jp="Googleで口コミを見る">Read Reviews on Google →</a>
@@ -825,17 +834,17 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <h2 class="section-title" data-jp="ここに在ることの意味" style="margin-bottom:56px;">The <em>address</em> in time.</h2>
     <div style="display:flex;flex-direction:column;">
       <div class="g-timeline">
-        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--sumi);text-align:right;padding-top:4px;">1640</div>
+        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--sumi);text-align:right;padding-top:4px;">1640</div>
         <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--sumi);background:var(--washi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
         <div style="padding-top:4px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;" data-jp="島原が公式花街に">Shimabara designated</div><p data-jp="認定。現在の住所と建物の境界が定められる。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">The Tokugawa shogunate legally establishes Shimabara as Kyoto's designated quarter. Its boundaries, and the address of this building, are fixed.</p></div>
       </div>
       <div class="g-timeline">
-        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--sumi);text-align:right;padding-top:4px;white-space:nowrap;">1880年代</div>
+        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--sumi);text-align:right;padding-top:4px;white-space:nowrap;">1880年代</div>
         <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--sumi);background:var(--washi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
         <div style="padding-top:4px;"><div style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;" data-jp="町家の建築">Machiya constructed</div><p data-jp="島原の古典的な様式と間取りに忠実な町家（現在の建物）が建てられる。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">The current building is constructed in the Meiji period — a machiya whose proportions faithfully follow the classical Shimabara typology.</p></div>
       </div>
       <div class="g-timeline">
-        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;color:var(--urushi);text-align:right;padding-top:4px;">2023</div>
+        <div style="font-family:var(--f-display);font-size:28px;font-weight:300;line-height:1;color:var(--urushi);text-align:right;padding-top:4px;">2023</div>
         <div style="width:1px;background:var(--border);position:relative;"><div style="width:9px;height:9px;border:1px solid var(--urushi);background:var(--urushi);position:absolute;top:6px;left:50%;transform:translateX(-50%);"></div></div>
         <div style="padding-top:4px;"><div data-jp="綾錦オープン" style="font-family:var(--f-display);font-size:17px;font-weight:300;margin-bottom:8px;color:var(--urushi);">Ayanishiki opens</div><p data-jp="3年間の改修を経て、今も変わらぬ島原、大門の地に三室の宿として開業。" style="font-size:13px;color:var(--sumi-mid);line-height:1.85;font-weight:300;max-width:480px;">After three years of careful restoration, the house opens as a three-room inn. The Ōmon gate remains. The street outside is still Shimabara.</p></div>
       </div>
@@ -1052,6 +1061,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -1069,7 +1079,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" class="active" aria-current="page" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- BREADCRUMB -->
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -1110,7 +1120,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div style="display:flex;gap:12px;">
-      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)">Reserve This Room</button>
+      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)" data-jp="予約する">Reservation</button>
       <button type="button" class="btn btn-outline">Enquire →</button>
     </div>
   </div>
@@ -1131,7 +1141,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div style="height:1px;background:var(--border-lt);"></div>
         <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;" data-jp="眺め">View</span><span style="font-size:13px;color:var(--sumi);font-weight:300;" data-jp="竹テラス">Bamboo terrace</span></div>
       </div>
-      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)">Reserve Now</button></div>
+      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)" data-jp="予約する">Reservation</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;" data-jp="含む">Included</div>
@@ -1146,12 +1156,13 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;" data-jp="他の客室">Other Rooms</div>
       <div style="display:flex;flex-direction:column;gap:0;">
-        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">西の部屋 — 2F West Room <span style="color:var(--sumi-light);">→</span></a>
-        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">東の部屋 — 2F East Room <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;line-height:1.4;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">西の部屋 — 2F West Room <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(14);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;line-height:1.4;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">東の部屋 — 2F East Room <span style="color:var(--sumi-light);">→</span></a>
       </div>
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer has-sticky-reserve">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -1162,7 +1173,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- MOBILE STICKY RESERVE BAR (mobile only; price is provisional pending official rate) -->
 <div class="mobile-reserve-bar">
   <div class="mrb-price"><span data-jp="1泊あたり">Per Night</span><strong>¥32,000〜</strong></div>
-  <button type="button" class="btn-book" onclick="goPage(12)">Reserve Now</button>
+  <button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button>
 </div>
 </div>
 
@@ -1174,7 +1185,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" class="active" aria-current="page" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- 修正#19: 体験ページ見出し変更（画像参照） -->
 <!-- HEADER -->
@@ -1302,6 +1313,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -1319,7 +1331,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" class="active" aria-current="page" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
   <a href="#" onclick="goPage(4);return false;" style="font-size:9px;letter-spacing:.12em;color:var(--sumi-light);font-weight:300;" data-jp="体験" >Experiences</a>
@@ -1365,7 +1377,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div style="height:1px;background:var(--border-lt);"></div>
         <div style="display:flex;justify-content:space-between;"><span data-jp="言語" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Language</span><span style="font-size:13px;color:var(--sumi);font-weight:300;">EN · JP</span></div>
       </div>
-      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)">Reserve Now</button></div>
+      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)" data-jp="予約する">Reservation</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div data-jp="他の体験" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Other Experiences</div>
@@ -1377,6 +1389,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a></div></div>
@@ -1394,7 +1407,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" class="active" aria-current="page" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- HEADER -->
 <!-- 修正#30/#47b: 施設ページ キャッチコピー変更・1棟貸しボタン追加 -->
@@ -1470,6 +1483,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -1487,7 +1501,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" class="active" aria-current="page" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
   <a href="#" onclick="goPage(6);return false;" style="font-size:9px;letter-spacing:.12em;color:var(--sumi-light);font-weight:300;" data-jp="施設" >Facilities</a>
@@ -1544,6 +1558,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a></div></div>
@@ -1561,7 +1576,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" class="active" aria-current="page" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- 再修正#49: 島原ページ背景を写真→ベージュ -->
 <div style="height:400px;position:relative;border-bottom:1px solid rgba(242,238,231,.08);background:var(--washi);">
@@ -1611,6 +1626,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="spot-card"><img src="images/spot-botanical.jpg" alt="Botanical Garden" style="aspect-ratio:3/2;width:100%;object-fit:cover;display:block;"><div class="spot-card-body"><div class="spot-name">府立植物園</div><div class="spot-dist" data-jp="30分 · 庭園">30 min · Garden</div></div></div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a></div></div>
@@ -1629,7 +1645,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" class="active" aria-current="page" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
   <span class="kicker">— Journal</span>
@@ -1675,6 +1691,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="news-card"><img src="images/room-hinoki-bath.jpg" alt="Hinoki bath" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Stay · 滞在</div><div class="news-card-title" data-jp="吉野檜：浴槽の木材が予約より重要な理由">Yoshino hinoki: why the bath timber matters more than the booking</div><div class="news-card-date" data-jp="2024年9月 · 読了4分">September 2024 · 4 min read</div><button type="button" class="btn btn-outline" style="padding:9px 18px;font-size:10px;margin-top:auto;" data-jp="記事を読む →" onclick="goPage(10)">Read Article →</button></div></div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a></div></div>
@@ -1692,7 +1709,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" class="active" aria-current="page" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- BREADCRUMB -->
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -1775,6 +1792,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <div class="news-card"><img src="images/article-shimabara-winter.jpg" alt="Shimabara winter gate" style="aspect-ratio:4/3;width:100%;object-fit:cover;display:block;"><div class="news-card-body"><div class="news-card-cat">Season · 季節</div><div class="news-card-title" data-jp="冬の島原：観光客が去った後の街の風景">Winter in Shimabara: what the quarter looks like after the tourists leave</div><div class="news-card-date" data-jp="2024年12月 · 読了5分">December 2024 · 5 min read</div><button type="button" class="btn btn-outline" style="padding:9px 18px;font-size:10px;margin-top:auto;" data-jp="記事を読む →" onclick="goPage(10)">Read Article →</button></div></div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a></div></div>
@@ -1792,7 +1810,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" class="active" aria-current="page" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div style="padding:72px 52px 64px;border-bottom:1px solid var(--border);">
   <span class="kicker">— FAQ · よくある質問</span>
@@ -1867,6 +1885,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -1884,7 +1903,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" class="active" aria-current="page" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <div class="sec-pad g-2col g-wide align-e">
   <div>
@@ -1936,7 +1955,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   </div>
   <div style="border-left:1px solid rgba(242,238,231,.08);padding-left:24px;">
     <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:12px;font-weight:300;" data-jp="ご予約">Reservations</div>
-    <div style="margin-top:4px;"><button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:400;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:15px 32px;background:var(--urushi);color:var(--washi);">Book Online →</button></div>
+    <div style="margin-top:4px;"><button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:400;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:15px 32px;background:var(--urushi);color:var(--washi);" data-jp="予約する">Reservation</button></div>
   </div>
 </div>
 <!-- ════ 島原コンテンツ（p8より統合） ════ -->
@@ -1986,6 +2005,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
   </div>
 </div>
 <!-- ════ /島原コンテンツ ════ -->
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -2003,7 +2023,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" class="active" aria-current="page" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- BREADCRUMB -->
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -2054,7 +2074,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
       </div>
     </div>
     <div style="display:flex;gap:12px;">
-      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)">Reserve Now</button>
+      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)" data-jp="予約する">Reservation</button>
       <button type="button" class="btn btn-outline">Enquire →</button>
     </div>
   </div>
@@ -2071,7 +2091,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div style="height:1px;background:var(--border-lt);"></div>
         <div style="display:flex;justify-content:space-between;"><span data-jp="ペット" style="font-size:11px;color:var(--sumi-light);font-weight:200;">Pets</span><span style="font-size:13px;color:var(--sumi);font-weight:300;" data-jp="可（大型犬を含む）">All sizes welcome</span></div>
       </div>
-      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)">Reserve Now</button></div>
+      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)" data-jp="予約する">Reservation</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div data-jp="クイックリンク" style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;">Quick Links</div>
@@ -2087,8 +2107,9 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <div style="background:var(--sumi);padding:80px 52px;text-align:center;border-bottom:1px solid var(--border-dk);">
   <span class="kicker" style="color:rgba(242,238,231,.5);" data-jp="— ご予約">— Reservations</span>
   <h2 class="section-title lt" style="font-size:32px;margin-bottom:32px;" data-jp="京の一棟貸し、<em>ご予約はお早めに。</em>">Reserve the <em>whole house.</em></h2>
-  <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:12px;padding:16px 40px;" onclick="goPage(12)">Reserve Now</button>
+  <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:12px;padding:16px 40px;" onclick="goPage(12)" data-jp="予約する">Reservation</button>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室" >Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -2108,7 +2129,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links-list"><li><a href="#" onclick="goPage(0);return false;" data-jp="ホーム">Home</a></li><li><a href="#" onclick="goPage(1);return false;" data-jp="×コンセプト">×Concept</a></li><li><a href="#" onclick="goPage(2);return false;" class="active" aria-current="page" data-jp="客室">Rooms</a></li><li><a href="#" onclick="goPage(4);return false;" data-jp="×体験">×Experiences</a></li><li><a href="#" onclick="goPage(6);return false;" data-jp="×施設">×Facilities</a></li><li><a href="#" onclick="goPage(8);return false;" data-jp="×島原">×Shimabara</a></li><li><a href="#" onclick="goPage(9);return false;" data-jp="ジャーナル">Journal</a></li><li><a href="#" onclick="goPage(12);return false;" data-jp="アクセス">Access</a></li><li><a href="#" onclick="goPage(13);return false;" data-jp="1棟貸し">Whole House</a></li></ul>
-  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)">Book · 予約</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
+  <div class="nav-right"><span class="nav-lang"><button onclick="setLang('en')" class="lang-btn" id="btn-en">EN</button> | <button onclick="setLang('jp')" class="lang-btn" id="btn-jp">日本語</button></span><button type="button" class="btn-book" onclick="goPage(2)" data-jp="予約する">Reservation</button><div style="background:#1e4556;color:#fff;font-size:8px;letter-spacing:.04em;padding:8px 14px;line-height:1.7;text-align:center;font-weight:500;white-space:nowrap;">最低価格保証<br>（ベストレートギャランティ）</div></div>
 </nav>
 <!-- BREADCRUMB -->
 <div style="padding:16px 52px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;">
@@ -2148,7 +2169,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
     <h3 style="font-family:var(--f-display);font-size:26px;font-weight:300;color:var(--sumi);margin-bottom:16px;margin-top:32px;">東の部屋</h3>
     <div class="chip-row" style="margin-bottom:32px;"><span class="chip chip-sumi" data-jp="朝の陽光">Morning Sun</span><span class="chip chip-sumi" data-jp="東向き">East-facing</span><span class="chip chip-sumi" data-jp="2階">2F</span><span class="chip chip-sumi" data-jp="21㎡ · 1〜4名様">21㎡ · 1–4 guests</span></div>
     <div style="display:flex;gap:12px;">
-      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)">Reserve</button>
+      <button type="button" class="btn-book" style="font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px 32px;" onclick="goPage(12)" data-jp="予約する">Reservation</button>
       <button type="button" class="btn btn-outline" onclick="goPage(2)">← 客室一覧</button>
     </div>
   </div>
@@ -2167,17 +2188,18 @@ body { word-break:break-word; overflow-wrap:break-word; }
         <div style="height:1px;background:var(--border-lt);"></div>
         <div style="display:flex;justify-content:space-between;"><span style="font-size:11px;color:var(--sumi-light);font-weight:200;" data-jp="人数">Guests</span><span style="font-size:13px;color:var(--sumi);font-weight:300;" data-jp="最大4名">Up to 4</span></div>
       </div>
-      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)">Reserve Now</button></div>
+      <div style="margin-top:24px;"><button type="button" class="btn-book" style="width:100%;font-family:var(--f-ui);font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;font-size:11px;padding:13px;" onclick="goPage(12)" data-jp="予約する">Reservation</button></div>
     </div>
     <div style="border:1px solid var(--border);background:var(--washi-warm);padding:24px;">
       <div style="font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--sumi-light);margin-bottom:16px;font-weight:300;" data-jp="他の客室">Other Rooms</div>
       <div style="display:flex;flex-direction:column;gap:0;">
-        <a href="#" onclick="goPage(3);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">テラス付ツインルーム — 1F <span style="color:var(--sumi-light);">→</span></a>
-        <a href="#" onclick="goPage(13);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">1棟貸し <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(3);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;line-height:1.4;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">テラス付ツインルーム — 1F <span style="color:var(--sumi-light);">→</span></a>
+        <a href="#" onclick="goPage(13);return false;" style="font-family:var(--f-display);font-size:15px;font-weight:300;line-height:1.4;color:var(--sumi);display:flex;justify-content:space-between;padding:12px 0;">1棟貸し <span style="color:var(--sumi-light);">→</span></a>
       </div>
     </div>
   </div>
 </div>
+<div style="text-align:center;padding:32px 52px;background:var(--washi);"><button type="button" class="btn btn-outline" onclick="document.querySelector('.page.active').scrollTo({top:0,behavior:'smooth'})" data-jp="Topに戻る">Back to Top</button></div>
 <footer class="site-footer has-sticky-reserve">
   <div><div class="ft-brand">Ayanishiki</div><span class="ft-brand-jp">綾錦</span><p class="ft-tagline">〒600-8816 京都府京都市下京区西新屋敷中堂寺町58-5</p></div>
   <div><div class="ft-col-title" data-jp="宿泊">Stay</div><div class="ft-links"><a href="#" onclick="goPage(2);return false;" data-jp="客室">Rooms</a><a href="#" onclick="goPage(12);return false;" data-jp="空室確認">Availability</a></div></div>
@@ -2188,7 +2210,7 @@ body { word-break:break-word; overflow-wrap:break-word; }
 <!-- MOBILE STICKY RESERVE BAR (mobile only; price is provisional pending official rate) -->
 <div class="mobile-reserve-bar">
   <div class="mrb-price"><span data-jp="1泊あたり">Per Night</span><strong>¥24,000〜</strong></div>
-  <button type="button" class="btn-book" onclick="goPage(12)">Reserve Now</button>
+  <button type="button" class="btn-book" onclick="goPage(12)" data-jp="予約する">Reservation</button>
 </div>
 </div>
 
