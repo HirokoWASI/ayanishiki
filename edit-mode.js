@@ -18,6 +18,11 @@
   var FILE = location.pathname.split('/').pop() || 'index.html';
   var STORE_KEY = 'ayanishiki-edits:' + FILE;
 
+  // ---- 「公開する」ボタンのコミット先（GitHub Pages のリポジトリ） ----
+  var GH_REPO = 'HirokoWASI/ayanishiki';
+  var GH_BRANCH = 'main';
+  var TOKEN_KEY = 'ayanishiki-gh-token';
+
   // ---- 状態 ----
   var overrides = load();       // { "body[1]/div[2]/p[1]": {en:"...", jp:"..."} }
   var baseline = new Map();     // element -> {en, jp} 初期値（リセット用）
@@ -109,7 +114,8 @@
       el.setAttribute('data-am-key', key);
       keyed.set(key, el);
       baseline.set(el, {
-        en: el.innerHTML,
+        // 日本語表示中に開いた場合は、言語切替が控えた英語原文(_en)を優先
+        en: (el._en !== undefined && el._en !== null) ? el._en : el.innerHTML,
         jp: el.hasAttribute('data-jp') ? el.getAttribute('data-jp') : null
       });
     }
@@ -360,6 +366,136 @@
       });
   }
 
+  // ------------------------------------------------------------
+  // 公開（GitHubへ直接コミット → GitHub Pagesが自動で再ビルド）
+  // ------------------------------------------------------------
+  function b64EncodeUtf8(s) {
+    var bytes = new TextEncoder().encode(s);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 0x8000) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    }
+    return btoa(bin);
+  }
+  function b64DecodeUtf8(b64) {
+    var bin = atob(String(b64).replace(/\s/g, ''));
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  function getToken(forceAsk) {
+    var t = null;
+    try { t = localStorage.getItem(TOKEN_KEY); } catch (e) {}
+    if (t && !forceAsk) return t;
+    t = window.prompt(
+      '公開にはGitHubのアクセストークンが必要です（初回のみ）。\n\n' +
+      '【作成方法】\n' +
+      '1. github.com にログイン → Settings → Developer settings\n' +
+      '   → Personal access tokens → Fine-grained tokens → Generate new token\n' +
+      '2. Repository access: Only select repositories → ' + GH_REPO + '\n' +
+      '3. Permissions → Contents → Read and write\n' +
+      '4. 生成されたトークン（github_pat_…）を下に貼り付けてください。\n\n' +
+      '※このブラウザにのみ保存され、サイトには含まれません。'
+    );
+    if (t) {
+      t = t.trim();
+      try { localStorage.setItem(TOKEN_KEY, t); } catch (e) {}
+    }
+    return t || null;
+  }
+
+  function ghHeaders(token) {
+    return {
+      'Authorization': 'Bearer ' + token,
+      'Accept': 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28'
+    };
+  }
+
+  var publishing = false;
+
+  function publish() {
+    if (publishing) return;
+    var keys = Object.keys(overrides);
+    if (!keys.length) { toast('公開する変更がありません'); return; }
+    var token = getToken(false);
+    if (!token) return;
+    if (!window.confirm('編集内容（' + keys.length + '件）を公開サイトに反映します。よろしいですか？\n（反映まで1〜2分かかります）')) return;
+
+    publishing = true;
+    toast('公開しています…');
+    var api = 'https://api.github.com/repos/' + GH_REPO + '/contents/' + encodeURIComponent(FILE);
+
+    fetch(api + '?ref=' + GH_BRANCH, { headers: ghHeaders(token), cache: 'no-store' })
+      .then(function (r) {
+        if (r.status === 401 || r.status === 403) throw new Error('AUTH');
+        if (!r.ok) throw new Error('GET ' + r.status);
+        return r.json();
+      })
+      .then(function (info) {
+        var text = b64DecodeUtf8(info.content);
+        var doc = new DOMParser().parseFromString(text, 'text/html');
+        var res = patchSource(text, doc);
+        if (!res.applied) throw new Error('NOMATCH');
+        return fetch(api, {
+          method: 'PUT',
+          headers: ghHeaders(token),
+          body: JSON.stringify({
+            message: '編集モードから本文テキストを更新（' + FILE + '・' + res.applied + '件）',
+            content: b64EncodeUtf8(res.text),
+            sha: info.sha,
+            branch: GH_BRANCH
+          })
+        }).then(function (r) {
+          if (r.status === 401 || r.status === 403) throw new Error('AUTH');
+          if (r.status === 409) throw new Error('CONFLICT');
+          if (!r.ok) throw new Error('PUT ' + r.status);
+          return res;
+        });
+      })
+      .then(function (res) {
+        publishing = false;
+        if (res.failed.length) {
+          alert(res.applied + '件を公開しました。\n' + res.failed.length +
+            '件は元のHTML内で場所を特定できず、反映できませんでした。\n' +
+            '「変更一覧をコピー」で内容を控えて、開発者にご相談ください。');
+          console.warn('[編集モード] 反映できなかった箇所:', res.failed);
+        } else {
+          toast(res.applied + '件を公開しました。サイト反映まで1〜2分お待ちください');
+        }
+        // 公開済みの下書きは、次回ページを開いた時に自動整理される（pruneOverrides）
+      })
+      .catch(function (err) {
+        publishing = false;
+        if (err.message === 'AUTH') {
+          try { localStorage.removeItem(TOKEN_KEY); } catch (e) {}
+          alert('GitHubの認証に失敗しました。トークンの期限切れ、または権限不足の可能性があります。\nもう一度「公開する」を押して、新しいトークンを入力してください。');
+        } else if (err.message === 'CONFLICT') {
+          alert('公開に失敗しました：他の更新と競合しました。\nもう一度「公開する」を押してください。');
+        } else if (err.message === 'NOMATCH') {
+          alert('編集箇所を元のHTML内で特定できませんでした。\n（サイトが別途更新された可能性があります）\n「変更一覧をコピー」で内容を控えて、開発者にご相談ください。');
+        } else {
+          alert('公開に失敗しました（' + err.message + '）。\n通信環境をご確認のうえ、もう一度お試しください。');
+        }
+      });
+  }
+
+  // 公開が済んで元HTMLと同じ内容になった下書きを自動的に整理する
+  function pruneOverrides() {
+    var changed = false;
+    Object.keys(overrides).forEach(function (key) {
+      var el = keyed.get(key);
+      if (!el) return;
+      var base = baseline.get(el) || {};
+      var ov = overrides[key];
+      if (ov.en != null && ov.en === base.en) { delete ov.en; changed = true; }
+      if (ov.jp != null && base.jp != null && ov.jp === base.jp) { delete ov.jp; changed = true; }
+      if (ov.en == null && ov.jp == null) { delete overrides[key]; changed = true; }
+    });
+    if (changed) save();
+  }
+
   function copyChanges() {
     var lines = [];
     Object.keys(overrides).forEach(function (key) {
@@ -433,11 +569,12 @@
       '<div>変更 <span class="am-count">0</span> 件（この端末に下書き保存）</div>' +
       '<div class="am-row"><button data-am-act="mode">クリックで編集：ON</button></div>' +
       '<div class="am-row"><button data-am-act="en">EN</button><button data-am-act="jp">日本語</button></div>' +
-      '<div class="am-row"><button class="am-primary" data-am-act="dl">HTMLをダウンロード</button></div>' +
+      '<div class="am-row"><button class="am-primary" data-am-act="publish">公開する（サイトに反映）</button></div>' +
+      '<div class="am-row"><button data-am-act="dl">HTMLをダウンロード</button></div>' +
       '<div class="am-row"><button data-am-act="copy">変更一覧をコピー</button><button data-am-act="reset">破棄</button></div>' +
       '<div class="am-row"><button data-am-act="exit">編集モードを終了</button></div>' +
       '<div class="am-note">文字をクリックして直接書き換えられます。Enterで確定 / Escで取り消し。' +
-      '公開に反映するには、書き出したHTMLをGitHubにアップロードしてください。</div>' +
+      '「公開する」を押すと1〜2分で公開サイトに反映されます（初回はGitHubトークンの入力が必要）。</div>' +
       '</div>';
     document.body.appendChild(bar);
 
@@ -455,6 +592,7 @@
       if (act === 'fold') setFolded(!bar.classList.contains('am-folded'));
       else if (act === 'mode') setEditing(!editing);
       else if (act === 'en' || act === 'jp') { if (window.setLang) window.setLang(act); }
+      else if (act === 'publish') publish();
       else if (act === 'dl') downloadHtml();
       else if (act === 'copy') copyChanges();
       else if (act === 'reset') resetAll();
@@ -497,6 +635,7 @@
   function boot() {
     buildUI();
     markEditable();
+    pruneOverrides();
     applyAll();
     setEditing(true);
     try { setFolded(localStorage.getItem('ayanishiki-edit-folded') === '1'); } catch (e) {}
