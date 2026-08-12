@@ -9,6 +9,15 @@
 - **対応状況一覧（Notion）：** https://www.notion.so/36b5f01e7d358155bc71c0d759428e07
 - **開発ブランチ：** `claude/charming-fermat-D5jax`
 
+## 編集モード（?edit）
+公開ページのURL末尾に `?edit` を付けると、ブラウザ上で本文テキストを直接書き換えられる（Webflow Collaborator 風）。
+- 例：https://hirokowasi.github.io/ayanishiki/index_v2.html?edit
+- 実装：`edit-mode.js`（`index.html` / `index_v2.html` の `</body>` 直前で読み込み）
+- `?edit` が無い通常表示には一切影響しない（UIも出ず、編集内容も反映されない）
+- 編集内容は **localStorage の下書き**。公開反映は「HTMLをダウンロード」→ GitHubに同名ファイルをアップロード
+- 日英切替に対応：**日本語表示中の編集は `data-jp` 属性**、英語表示中の編集は HTML 本文を書き換える
+- 書き出しは元HTMLへの部分置換なので、差分は編集した行のみ
+
 ## 修正点の管理構造
 - 元の指示書は **修正点1〜55**（55番号）だが、修正点37と修正点47が各2件記載されており、**合計57件**
 - HTMLファイル内のコメントタグ形式：`<!-- 修正#N: 説明 -->` または `/* 修正#N: 説明 */`（CSS内）
